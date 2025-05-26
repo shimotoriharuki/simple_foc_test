@@ -41,7 +41,8 @@ enum Pullup : uint8_t {
  * optimal implementations for your hardware.
  * 
  */
-class Sensor{
+class Sensor
+{
 	friend class SmoothingSensor;
     public:
         /**

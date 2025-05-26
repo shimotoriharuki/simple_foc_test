@@ -1,0 +1,12 @@
+../Core/Src/sensors/../common/base_classes/Sensor.h:44:7:constexpr Sensor::Sensor()	16	static
+../Core/Src/sensors/Encoder.cpp:11:1:Encoder::Encoder(int, int, float, int)	32	static
+../Core/Src/sensors/Encoder.cpp:42:6:void Encoder::handleA()	16	static
+../Core/Src/sensors/Encoder.cpp:65:6:void Encoder::handleB()	16	static
+../Core/Src/sensors/Encoder.cpp:89:6:void Encoder::handleIndex()	16	static
+../Core/Src/sensors/Encoder.cpp:109:6:virtual void Encoder::update()	16	static
+../Core/Src/sensors/Encoder.cpp:125:7:virtual float Encoder::getSensorAngle()	16	static
+../Core/Src/sensors/Encoder.cpp:135:7:virtual float Encoder::getVelocity()	16	static
+../Core/Src/sensors/Encoder.cpp:179:5:virtual int Encoder::needsSearch()	16	static
+../Core/Src/sensors/Encoder.cpp:184:5:int Encoder::hasIndex()	16	static
+../Core/Src/sensors/Encoder.cpp:191:6:virtual void Encoder::init()	16	static
+../Core/Src/sensors/Encoder.cpp:225:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	24	static

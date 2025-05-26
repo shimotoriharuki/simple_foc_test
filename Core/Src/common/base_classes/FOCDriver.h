@@ -1,8 +1,8 @@
 #ifndef FOCDRIVER_H
 #define FOCDRIVER_H
 
-#include "Arduino.h"
-
+//#include "Arduino.h"
+#include "stm32f3xx_hal.h"
 
 enum PhaseState : uint8_t {
   PHASE_OFF = 0, // both sides of the phase are off

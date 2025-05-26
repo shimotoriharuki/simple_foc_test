@@ -1,0 +1,4 @@
+../Core/Src/sensors/../common/base_classes/Sensor.h:44:7:constexpr Sensor::Sensor()	1
+../Core/Src/sensors/GenericSensor.cpp:9:1:GenericSensor::GenericSensor(float (*)(), void (*)())	3
+../Core/Src/sensors/GenericSensor.cpp:15:6:virtual void GenericSensor::init()	2
+../Core/Src/sensors/GenericSensor.cpp:24:7:virtual float GenericSensor::getSensorAngle()	1

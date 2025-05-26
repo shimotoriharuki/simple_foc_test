@@ -4,12 +4,13 @@ LowPassFilter::LowPassFilter(float time_constant)
     : Tf(time_constant)
     , y_prev(0.0f)
 {
-    timestamp_prev = _micros();
+    //timestamp_prev = _micros();
 }
 
 
 float LowPassFilter::operator() (float x)
 {
+	/*
     unsigned long timestamp = _micros();
     float dt = (timestamp - timestamp_prev)*1e-6f;
 
@@ -25,4 +26,5 @@ float LowPassFilter::operator() (float x)
     y_prev = y;
     timestamp_prev = timestamp;
     return y;
+    */
 }

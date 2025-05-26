@@ -1,0 +1,17 @@
+/opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/c++/13.3.1/cmath:234:3:constexpr float std::fabs(float)	16	static
+../Core/Src/BLDCMotor.cpp:41:1:BLDCMotor::BLDCMotor(int, float, float, float)	32	static
+../Core/Src/BLDCMotor.cpp:64:6:virtual void BLDCMotor::linkDriver(BLDCDriver*)	16	static
+../Core/Src/BLDCMotor.cpp:69:5:virtual int BLDCMotor::init()	16	static
+../Core/Src/BLDCMotor.cpp:116:6:virtual void BLDCMotor::disable()	16	static
+../Core/Src/BLDCMotor.cpp:128:6:virtual void BLDCMotor::enable()	16	static
+../Core/Src/BLDCMotor.cpp:149:6:virtual int BLDCMotor::initFOC()	24	static
+../Core/Src/BLDCMotor.cpp:203:5:int BLDCMotor::alignCurrentSense()	24	static
+../Core/Src/BLDCMotor.cpp:223:5:int BLDCMotor::alignSensor()	56	static
+../Core/Src/BLDCMotor.cpp:308:5:int BLDCMotor::absoluteZeroSearch()	24	static
+../Core/Src/BLDCMotor.cpp:339:6:virtual void BLDCMotor::loopFOC()	24	static
+../Core/Src/BLDCMotor.cpp:398:6:virtual void BLDCMotor::move(float)	24	static
+../Core/Src/BLDCMotor.cpp:501:6:virtual void BLDCMotor::setPhaseVoltage(float, float, float)	64	static
+../Core/Src/BLDCMotor.cpp:619:7:float BLDCMotor::velocityOpenloop(float)	16	static
+../Core/Src/BLDCMotor.cpp:653:7:float BLDCMotor::angleOpenloop(float)	16	static
+/opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:233:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+/opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:257:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static

@@ -1,11 +1,11 @@
 #ifndef FOCMOTOR_H
 #define FOCMOTOR_H
 
-#include "Arduino.h"
+//#include "Arduino.h"
 #include "Sensor.h"
 #include "CurrentSense.h"
 
-#include "../time_utils.h"
+//#include "../time_utils.h"
 #include "../foc_utils.h"
 #include "../defaults.h"
 #include "../pid.h"
@@ -216,7 +216,7 @@ class FOCMotor
      * 
      * @param serial Monitoring Serial class reference
      */
-    void useMonitoring(Print &serial);
+    //void useMonitoring(Print &serial);
 
     /**
      * Utility function intended to be used with serial plotter to monitor motor variables
@@ -244,7 +244,7 @@ class FOCMotor
     CurrentSense* current_sense; 
 
     // monitoring functions
-    Print* monitor_port; //!< Serial terminal variable if provided
+    //Print* monitor_port; //!< Serial terminal variable if provided
   private:
     // monitor counting variable
     unsigned int monitor_cnt = 0 ; //!< counting variable

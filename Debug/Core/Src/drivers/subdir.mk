@@ -6,21 +6,15 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Core/Src/drivers/BLDCDriver3PWM.cpp \
-../Core/Src/drivers/BLDCDriver6PWM.cpp \
-../Core/Src/drivers/StepperDriver2PWM.cpp \
-../Core/Src/drivers/StepperDriver4PWM.cpp 
+../Core/Src/drivers/BLDCDriver6PWM.cpp 
 
 OBJS += \
 ./Core/Src/drivers/BLDCDriver3PWM.o \
-./Core/Src/drivers/BLDCDriver6PWM.o \
-./Core/Src/drivers/StepperDriver2PWM.o \
-./Core/Src/drivers/StepperDriver4PWM.o 
+./Core/Src/drivers/BLDCDriver6PWM.o 
 
 CPP_DEPS += \
 ./Core/Src/drivers/BLDCDriver3PWM.d \
-./Core/Src/drivers/BLDCDriver6PWM.d \
-./Core/Src/drivers/StepperDriver2PWM.d \
-./Core/Src/drivers/StepperDriver4PWM.d 
+./Core/Src/drivers/BLDCDriver6PWM.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -30,7 +24,7 @@ Core/Src/drivers/%.o Core/Src/drivers/%.su Core/Src/drivers/%.cyclo: ../Core/Src
 clean: clean-Core-2f-Src-2f-drivers
 
 clean-Core-2f-Src-2f-drivers:
-	-$(RM) ./Core/Src/drivers/BLDCDriver3PWM.cyclo ./Core/Src/drivers/BLDCDriver3PWM.d ./Core/Src/drivers/BLDCDriver3PWM.o ./Core/Src/drivers/BLDCDriver3PWM.su ./Core/Src/drivers/BLDCDriver6PWM.cyclo ./Core/Src/drivers/BLDCDriver6PWM.d ./Core/Src/drivers/BLDCDriver6PWM.o ./Core/Src/drivers/BLDCDriver6PWM.su ./Core/Src/drivers/StepperDriver2PWM.cyclo ./Core/Src/drivers/StepperDriver2PWM.d ./Core/Src/drivers/StepperDriver2PWM.o ./Core/Src/drivers/StepperDriver2PWM.su ./Core/Src/drivers/StepperDriver4PWM.cyclo ./Core/Src/drivers/StepperDriver4PWM.d ./Core/Src/drivers/StepperDriver4PWM.o ./Core/Src/drivers/StepperDriver4PWM.su
+	-$(RM) ./Core/Src/drivers/BLDCDriver3PWM.cyclo ./Core/Src/drivers/BLDCDriver3PWM.d ./Core/Src/drivers/BLDCDriver3PWM.o ./Core/Src/drivers/BLDCDriver3PWM.su ./Core/Src/drivers/BLDCDriver6PWM.cyclo ./Core/Src/drivers/BLDCDriver6PWM.d ./Core/Src/drivers/BLDCDriver6PWM.o ./Core/Src/drivers/BLDCDriver6PWM.su
 
 .PHONY: clean-Core-2f-Src-2f-drivers
 

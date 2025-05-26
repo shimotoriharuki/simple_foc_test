@@ -5,18 +5,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Core/Src/communication/Commander.cpp \
-../Core/Src/communication/SimpleFOCDebug.cpp \
 ../Core/Src/communication/StepDirListener.cpp 
 
 OBJS += \
-./Core/Src/communication/Commander.o \
-./Core/Src/communication/SimpleFOCDebug.o \
 ./Core/Src/communication/StepDirListener.o 
 
 CPP_DEPS += \
-./Core/Src/communication/Commander.d \
-./Core/Src/communication/SimpleFOCDebug.d \
 ./Core/Src/communication/StepDirListener.d 
 
 
@@ -27,7 +21,7 @@ Core/Src/communication/%.o Core/Src/communication/%.su Core/Src/communication/%.
 clean: clean-Core-2f-Src-2f-communication
 
 clean-Core-2f-Src-2f-communication:
-	-$(RM) ./Core/Src/communication/Commander.cyclo ./Core/Src/communication/Commander.d ./Core/Src/communication/Commander.o ./Core/Src/communication/Commander.su ./Core/Src/communication/SimpleFOCDebug.cyclo ./Core/Src/communication/SimpleFOCDebug.d ./Core/Src/communication/SimpleFOCDebug.o ./Core/Src/communication/SimpleFOCDebug.su ./Core/Src/communication/StepDirListener.cyclo ./Core/Src/communication/StepDirListener.d ./Core/Src/communication/StepDirListener.o ./Core/Src/communication/StepDirListener.su
+	-$(RM) ./Core/Src/communication/StepDirListener.cyclo ./Core/Src/communication/StepDirListener.d ./Core/Src/communication/StepDirListener.o ./Core/Src/communication/StepDirListener.su
 
 .PHONY: clean-Core-2f-Src-2f-communication
 

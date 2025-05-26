@@ -5,17 +5,14 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Core/Src/common/base_classes/CurrentSense.cpp \
 ../Core/Src/common/base_classes/FOCMotor.cpp \
 ../Core/Src/common/base_classes/Sensor.cpp 
 
 OBJS += \
-./Core/Src/common/base_classes/CurrentSense.o \
 ./Core/Src/common/base_classes/FOCMotor.o \
 ./Core/Src/common/base_classes/Sensor.o 
 
 CPP_DEPS += \
-./Core/Src/common/base_classes/CurrentSense.d \
 ./Core/Src/common/base_classes/FOCMotor.d \
 ./Core/Src/common/base_classes/Sensor.d 
 
@@ -27,7 +24,7 @@ Core/Src/common/base_classes/%.o Core/Src/common/base_classes/%.su Core/Src/comm
 clean: clean-Core-2f-Src-2f-common-2f-base_classes
 
 clean-Core-2f-Src-2f-common-2f-base_classes:
-	-$(RM) ./Core/Src/common/base_classes/CurrentSense.cyclo ./Core/Src/common/base_classes/CurrentSense.d ./Core/Src/common/base_classes/CurrentSense.o ./Core/Src/common/base_classes/CurrentSense.su ./Core/Src/common/base_classes/FOCMotor.cyclo ./Core/Src/common/base_classes/FOCMotor.d ./Core/Src/common/base_classes/FOCMotor.o ./Core/Src/common/base_classes/FOCMotor.su ./Core/Src/common/base_classes/Sensor.cyclo ./Core/Src/common/base_classes/Sensor.d ./Core/Src/common/base_classes/Sensor.o ./Core/Src/common/base_classes/Sensor.su
+	-$(RM) ./Core/Src/common/base_classes/FOCMotor.cyclo ./Core/Src/common/base_classes/FOCMotor.d ./Core/Src/common/base_classes/FOCMotor.o ./Core/Src/common/base_classes/FOCMotor.su ./Core/Src/common/base_classes/Sensor.cyclo ./Core/Src/common/base_classes/Sensor.d ./Core/Src/common/base_classes/Sensor.o ./Core/Src/common/base_classes/Sensor.su
 
 .PHONY: clean-Core-2f-Src-2f-common-2f-base_classes
 

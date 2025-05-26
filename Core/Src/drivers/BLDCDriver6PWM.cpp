@@ -24,12 +24,14 @@ BLDCDriver6PWM::BLDCDriver6PWM(int phA_h,int phA_l,int phB_h,int phB_l,int phC_h
 
 // enable motor driver
 void  BLDCDriver6PWM::enable(){
+	/*
     // enable_pin the driver - if enable_pin pin available
     if ( _isset(enable_pin) ) digitalWrite(enable_pin, enable_active_high);
     // set phase state enabled
     setPhaseState(PhaseState::PHASE_ON, PhaseState::PHASE_ON, PhaseState::PHASE_ON);
     // set zero to PWM
     setPwm(0, 0, 0);
+    */
 }
 
 // disable motor driver
@@ -40,7 +42,7 @@ void BLDCDriver6PWM::disable()
   // set zero to PWM
   setPwm(0, 0, 0);
   // disable the driver - if enable_pin pin available
-  if ( _isset(enable_pin) ) digitalWrite(enable_pin, !enable_active_high);
+  //if ( _isset(enable_pin) ) digitalWrite(enable_pin, !enable_active_high);
 
 }
 
@@ -48,6 +50,7 @@ void BLDCDriver6PWM::disable()
 int BLDCDriver6PWM::init() {
 
   // PWM pins
+	/*
   pinMode(pwmA_h, OUTPUT);
   pinMode(pwmB_h, OUTPUT);
   pinMode(pwmC_h, OUTPUT);
@@ -73,6 +76,7 @@ int BLDCDriver6PWM::init() {
   params = _configure6PWM(pwm_frequency, dead_zone, pwmA_h,pwmA_l, pwmB_h,pwmB_l, pwmC_h,pwmC_l);
   initialized = (params!=SIMPLEFOC_DRIVER_INIT_FAILED);
   return params!=SIMPLEFOC_DRIVER_INIT_FAILED;
+  */
 }
 
 
@@ -89,7 +93,7 @@ void BLDCDriver6PWM::setPwm(float Ua, float Ub, float Uc) {
   dc_c = _constrain(Uc / voltage_power_supply, 0.0f , 1.0f );
   // hardware specific writing
   // hardware specific function - depending on driver and mcu
-  _writeDutyCycle6PWM(dc_a, dc_b, dc_c, phase_state, params);
+  //_writeDutyCycle6PWM(dc_a, dc_b, dc_c, phase_state, params);
 }
 
 

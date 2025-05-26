@@ -29,7 +29,7 @@ Encoder::Encoder(int _encA, int _encB , float _ppr, int _index){
   prev_Th = 0;
   pulse_per_second = 0;
   prev_pulse_counter = 0;
-  prev_timestamp_us = _micros();
+  //prev_timestamp_us = _micros();
 
   // extern pullup as default
   pullup = Pullup::USE_EXTERN;
@@ -40,6 +40,7 @@ Encoder::Encoder(int _encA, int _encB , float _ppr, int _index){
 //  Encoder interrupt callback functions
 // A channel
 void Encoder::handleA() {
+	/*
   bool A = digitalRead(pinA);
   switch (quadrature){
     case Quadrature::ON:
@@ -58,9 +59,11 @@ void Encoder::handleA() {
       }
       break;
   }
+  */
 }
 // B channel
 void Encoder::handleB() {
+	/*
   bool B = digitalRead(pinB);
   switch (quadrature){
     case Quadrature::ON:
@@ -79,10 +82,12 @@ void Encoder::handleB() {
       }
       break;
   }
+  */
 }
 
 // Index channel
 void Encoder::handleIndex() {
+	/*
   if(hasIndex()){
     bool I = digitalRead(index_pin);
     if(I && !I_active){
@@ -96,11 +101,13 @@ void Encoder::handleIndex() {
     }
     I_active = I;
   }
+  */
 }
 
 
 // Sensor update function. Safely copy volatile interrupt variables into Sensor base class state variables.
 void Encoder::update() {
+	/*
   // Copy volatile variables in minimal-duration blocking section to ensure no interrupts are missed
   noInterrupts();
   angle_prev_ts = pulse_timestamp;
@@ -109,6 +116,7 @@ void Encoder::update() {
   // TODO: numerical precision issue here if the pulse_counter overflows the angle will be lost
   full_rotations = copy_pulse_counter / (int)cpr;
   angle_prev = _2PI * ((copy_pulse_counter) % ((int)cpr)) / ((float)cpr);
+  */
 }
 
 /*
@@ -125,6 +133,7 @@ float Encoder::getSensorAngle(){
   function using mixed time and frequency measurement technique
 */
 float Encoder::getVelocity(){
+	/*
   // Copy volatile variables in minimal-duration blocking section to ensure no interrupts are missed
   noInterrupts();
   long copy_pulse_counter = pulse_counter;
@@ -162,6 +171,7 @@ float Encoder::getVelocity(){
   prev_Th = Th;
   prev_pulse_counter = copy_pulse_counter;
   return velocity;
+  */
 }
 
 // getter for index pin
@@ -179,6 +189,7 @@ int Encoder::hasIndex(){
 // encoder initialisation of the hardware pins
 // and calculation variables
 void Encoder::init(){
+	/*
 
   // Encoder - check if pullup needed for your encoder
   if(pullup == Pullup::USE_INTERN){
@@ -205,11 +216,14 @@ void Encoder::init(){
   if(quadrature == Quadrature::ON) cpr = 4*cpr;
 
   // we don't call Sensor::init() here because init is handled in Encoder class.
+
+   */
 }
 
 // function enabling hardware interrupts of the for the callback provided
 // if callback is not provided then the interrupt is not enabled
 void Encoder::enableInterrupts(void (*doA)(), void(*doB)(), void(*doIndex)()){
+	/*
   // attach interrupt if functions provided
   switch(quadrature){
     case Quadrature::ON:
@@ -226,4 +240,5 @@ void Encoder::enableInterrupts(void (*doA)(), void(*doB)(), void(*doIndex)()){
 
   // if index used initialize the index interrupt
   if(hasIndex() && doIndex != nullptr) attachInterrupt(digitalPinToInterrupt(index_pin), doIndex, CHANGE);
+  */
 }

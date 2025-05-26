@@ -1,6 +1,6 @@
 #include "Sensor.h"
 #include "../foc_utils.h"
-#include "../time_utils.h"
+//#include "../time_utils.h"
 
 
 
@@ -8,10 +8,10 @@ void Sensor::update() {
     float val = getSensorAngle();
     if (val<0) // sensor angles are strictly non-negative. Negative values are used to signal errors.
         return; // TODO signal error, e.g. via a flag and counter
-    angle_prev_ts = _micros();
+    //angle_prev_ts = _micros();
     float d_angle = val - angle_prev;
     // if overflow happened track it as full rotation
-    if(abs(d_angle) > (0.8f*_2PI) ) full_rotations += ( d_angle > 0 ) ? -1 : 1; 
+    //if(abs(d_angle) > (0.8f*_2PI) ) full_rotations += ( d_angle > 0 ) ? -1 : 1;
     angle_prev = val;
 }
 
@@ -40,14 +40,14 @@ float Sensor::getVelocity() {
 void Sensor::init() {
     // initialize all the internal variables of Sensor to ensure a "smooth" startup (without a 'jump' from zero)
     getSensorAngle(); // call once
-    delayMicroseconds(1);
+    //delayMicroseconds(1);
     vel_angle_prev = getSensorAngle(); // call again
-    vel_angle_prev_ts = _micros();
-    delay(1);
+    //vel_angle_prev_ts = _micros();
+    //delay(1);
     getSensorAngle(); // call once
-    delayMicroseconds(1);
+    //delayMicroseconds(1);
     angle_prev = getSensorAngle(); // call again
-    angle_prev_ts = _micros();
+    //angle_prev_ts = _micros();
 }
 
 

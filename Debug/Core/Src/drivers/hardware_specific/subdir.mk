@@ -6,24 +6,15 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Core/Src/drivers/hardware_specific/due_mcu.cpp \
-../Core/Src/drivers/hardware_specific/esp8266_mcu.cpp \
-../Core/Src/drivers/hardware_specific/generic_mcu.cpp \
-../Core/Src/drivers/hardware_specific/nrf52_mcu.cpp \
-../Core/Src/drivers/hardware_specific/portenta_h7_mcu.cpp 
+../Core/Src/drivers/hardware_specific/generic_mcu.cpp 
 
 OBJS += \
 ./Core/Src/drivers/hardware_specific/due_mcu.o \
-./Core/Src/drivers/hardware_specific/esp8266_mcu.o \
-./Core/Src/drivers/hardware_specific/generic_mcu.o \
-./Core/Src/drivers/hardware_specific/nrf52_mcu.o \
-./Core/Src/drivers/hardware_specific/portenta_h7_mcu.o 
+./Core/Src/drivers/hardware_specific/generic_mcu.o 
 
 CPP_DEPS += \
 ./Core/Src/drivers/hardware_specific/due_mcu.d \
-./Core/Src/drivers/hardware_specific/esp8266_mcu.d \
-./Core/Src/drivers/hardware_specific/generic_mcu.d \
-./Core/Src/drivers/hardware_specific/nrf52_mcu.d \
-./Core/Src/drivers/hardware_specific/portenta_h7_mcu.d 
+./Core/Src/drivers/hardware_specific/generic_mcu.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -33,7 +24,7 @@ Core/Src/drivers/hardware_specific/%.o Core/Src/drivers/hardware_specific/%.su C
 clean: clean-Core-2f-Src-2f-drivers-2f-hardware_specific
 
 clean-Core-2f-Src-2f-drivers-2f-hardware_specific:
-	-$(RM) ./Core/Src/drivers/hardware_specific/due_mcu.cyclo ./Core/Src/drivers/hardware_specific/due_mcu.d ./Core/Src/drivers/hardware_specific/due_mcu.o ./Core/Src/drivers/hardware_specific/due_mcu.su ./Core/Src/drivers/hardware_specific/esp8266_mcu.cyclo ./Core/Src/drivers/hardware_specific/esp8266_mcu.d ./Core/Src/drivers/hardware_specific/esp8266_mcu.o ./Core/Src/drivers/hardware_specific/esp8266_mcu.su ./Core/Src/drivers/hardware_specific/generic_mcu.cyclo ./Core/Src/drivers/hardware_specific/generic_mcu.d ./Core/Src/drivers/hardware_specific/generic_mcu.o ./Core/Src/drivers/hardware_specific/generic_mcu.su ./Core/Src/drivers/hardware_specific/nrf52_mcu.cyclo ./Core/Src/drivers/hardware_specific/nrf52_mcu.d ./Core/Src/drivers/hardware_specific/nrf52_mcu.o ./Core/Src/drivers/hardware_specific/nrf52_mcu.su ./Core/Src/drivers/hardware_specific/portenta_h7_mcu.cyclo ./Core/Src/drivers/hardware_specific/portenta_h7_mcu.d ./Core/Src/drivers/hardware_specific/portenta_h7_mcu.o ./Core/Src/drivers/hardware_specific/portenta_h7_mcu.su
+	-$(RM) ./Core/Src/drivers/hardware_specific/due_mcu.cyclo ./Core/Src/drivers/hardware_specific/due_mcu.d ./Core/Src/drivers/hardware_specific/due_mcu.o ./Core/Src/drivers/hardware_specific/due_mcu.su ./Core/Src/drivers/hardware_specific/generic_mcu.cyclo ./Core/Src/drivers/hardware_specific/generic_mcu.d ./Core/Src/drivers/hardware_specific/generic_mcu.o ./Core/Src/drivers/hardware_specific/generic_mcu.su
 
 .PHONY: clean-Core-2f-Src-2f-drivers-2f-hardware_specific
 

@@ -1,5 +1,7 @@
 #include "foc_utils.h"
-
+#include "stm32f3xx_hal.h"
+#include <math.h>
+#include <algorithm>
 
 // function approximating the sine calculation by using fixed size array
 // uses a 65 element lookup table and interpolation
@@ -56,7 +58,7 @@ __attribute__((weak)) float _atan2(float y, float x) {
     float abs_y = fabsf(y);
     float abs_x = fabsf(x);
     // inject FLT_MIN in denominator to avoid division by zero
-    float a = min(abs_x, abs_y) / (max(abs_x, abs_y));
+    float a = std::min(abs_x, abs_y) / (std::max(abs_x, abs_y));
     // s := a * a
     float s = a * a;
     // r := ((-0.0464964749 * s + 0.15931422) * s - 0.327622764) * s * a + a

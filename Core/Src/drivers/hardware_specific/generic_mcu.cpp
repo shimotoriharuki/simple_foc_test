@@ -77,7 +77,7 @@ __attribute__((weak)) void* _configure6PWM(long pwm_frequency, float dead_zone, 
 // - hardware speciffic
 __attribute__((weak)) void _writeDutyCycle1PWM(float dc_a, void* params){
   // transform duty cycle from [0,1] to [0,255]
-  analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
+  //analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
 }
 
 
@@ -86,8 +86,8 @@ __attribute__((weak)) void _writeDutyCycle1PWM(float dc_a, void* params){
 // - hardware speciffic
 __attribute__((weak)) void _writeDutyCycle2PWM(float dc_a,  float dc_b, void* params){
   // transform duty cycle from [0,1] to [0,255]
-  analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
-  analogWrite(((GenericDriverParams*)params)->pins[1], 255.0f*dc_b);
+  //analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
+  //analogWrite(((GenericDriverParams*)params)->pins[1], 255.0f*dc_b);
 }
 
 // function setting the pwm duty cycle to the hardware
@@ -95,9 +95,9 @@ __attribute__((weak)) void _writeDutyCycle2PWM(float dc_a,  float dc_b, void* pa
 // - hardware speciffic
 __attribute__((weak)) void _writeDutyCycle3PWM(float dc_a,  float dc_b, float dc_c, void* params){
   // transform duty cycle from [0,1] to [0,255]
-  analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
-  analogWrite(((GenericDriverParams*)params)->pins[1], 255.0f*dc_b);
-  analogWrite(((GenericDriverParams*)params)->pins[2], 255.0f*dc_c);
+  //analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
+  //analogWrite(((GenericDriverParams*)params)->pins[1], 255.0f*dc_b);
+  //analogWrite(((GenericDriverParams*)params)->pins[2], 255.0f*dc_c);
 }
 
 // function setting the pwm duty cycle to the hardware
@@ -105,11 +105,12 @@ __attribute__((weak)) void _writeDutyCycle3PWM(float dc_a,  float dc_b, float dc
 // - hardware speciffic
 __attribute__((weak)) void _writeDutyCycle4PWM(float dc_1a,  float dc_1b, float dc_2a, float dc_2b, void* params){
   // transform duty cycle from [0,1] to [0,255]
-  
+  /*
   analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_1a);
   analogWrite(((GenericDriverParams*)params)->pins[1], 255.0f*dc_1b);
   analogWrite(((GenericDriverParams*)params)->pins[2], 255.0f*dc_2a);
   analogWrite(((GenericDriverParams*)params)->pins[3], 255.0f*dc_2b);
+	*/
 }
 
 

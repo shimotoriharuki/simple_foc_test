@@ -21,9 +21,11 @@ BLDCDriver3PWM::BLDCDriver3PWM(int phA, int phB, int phC, int en1, int en2, int 
 // enable motor driver
 void  BLDCDriver3PWM::enable(){
     // enable_pin the driver - if enable_pin pin available
+	/*
     if ( _isset(enableA_pin) ) digitalWrite(enableA_pin, enable_active_high);
     if ( _isset(enableB_pin) ) digitalWrite(enableB_pin, enable_active_high);
     if ( _isset(enableC_pin) ) digitalWrite(enableC_pin, enable_active_high);
+    */
     // set zero to PWM
     setPwm(0,0,0);
 }
@@ -34,15 +36,18 @@ void BLDCDriver3PWM::disable()
   // set zero to PWM
   setPwm(0, 0, 0);
   // disable the driver - if enable_pin pin available
+  /*
   if ( _isset(enableA_pin) ) digitalWrite(enableA_pin, !enable_active_high);
   if ( _isset(enableB_pin) ) digitalWrite(enableB_pin, !enable_active_high);
   if ( _isset(enableC_pin) ) digitalWrite(enableC_pin, !enable_active_high);
+  */
 
 }
 
 // init hardware pins
 int BLDCDriver3PWM::init() {
   // PWM pins
+	/*
   pinMode(pwmA, OUTPUT);
   pinMode(pwmB, OUTPUT);
   pinMode(pwmC, OUTPUT);
@@ -59,6 +64,7 @@ int BLDCDriver3PWM::init() {
   params = _configure3PWM(pwm_frequency, pwmA, pwmB, pwmC);
   initialized = (params!=SIMPLEFOC_DRIVER_INIT_FAILED);
   return params!=SIMPLEFOC_DRIVER_INIT_FAILED;
+  */
 }
 
 
@@ -66,11 +72,13 @@ int BLDCDriver3PWM::init() {
 // Set voltage to the pwm pin
 void BLDCDriver3PWM::setPhaseState(PhaseState sa, PhaseState sb, PhaseState sc) {
   // disable if needed
+	/*
   if( _isset(enableA_pin) &&  _isset(enableB_pin)  && _isset(enableC_pin) ){
     digitalWrite(enableA_pin, sa == PhaseState::PHASE_ON ? enable_active_high:!enable_active_high);
     digitalWrite(enableB_pin, sb == PhaseState::PHASE_ON ? enable_active_high:!enable_active_high);
     digitalWrite(enableC_pin, sc == PhaseState::PHASE_ON ? enable_active_high:!enable_active_high);
   }
+  */
 }
 
 // Set voltage to the pwm pin

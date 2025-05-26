@@ -1,7 +1,7 @@
 #ifndef STEPDIR_H
 #define STEPDIR_H
 
-#include "Arduino.h"
+//#include "Arduino.h"
 #include "../common/foc_utils.h"
 
 
@@ -48,7 +48,7 @@ class StepDirListener
     int pin_step; //!< step pin
     int pin_dir; //!< direction pin
     long count; //!< current counter value - should be set to 0 for homing
-    decltype(RISING) polarity = RISING; //!< polarity of the step pin
+    //decltype(RISING) polarity = RISING; //!< polarity of the step pin
 
   private:
     float* attached_variable = nullptr; //!< pointer to the attached variable 
