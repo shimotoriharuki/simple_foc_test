@@ -6,6 +6,8 @@
 //#include "../common/time_utils.h"
 #include "../common/base_classes/Sensor.h"
 
+#include "stm32f3xx_hal.h"
+#include "main.h"
 
 /**
  *  Quadrature mode configuration structure
@@ -85,6 +87,8 @@ class Encoder: public Sensor{
     // velocity calculation variables
     float prev_Th, pulse_per_second;
     volatile long prev_pulse_counter, prev_timestamp_us;
+
+    uint32_t encoder_cnt;
 };
 
 

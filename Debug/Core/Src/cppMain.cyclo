@@ -1,1 +1,6 @@
-../Core/Src/cppMain.cpp:11:6:void cppInit()	1
+../Core/Src/cppMain.cpp:19:6:void doA()	1
+../Core/Src/cppMain.cpp:22:6:void doB()	1
+../Core/Src/cppMain.cpp:25:6:void doMotor(char*)	1
+../Core/Src/cppMain.cpp:29:6:void cppInit()	1
+../Core/Src/cppMain.cpp:50:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/cppMain.cpp:50:1:cpp)	1

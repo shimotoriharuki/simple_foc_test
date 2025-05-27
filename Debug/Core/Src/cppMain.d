@@ -1,8 +1,4 @@
-Core/Src/cppMain.o: ../Core/Src/cppMain.cpp ../Core/Src/SimpleFOC.h \
- ../Core/Src/BLDCMotor.h ../Core/Src/common/base_classes/FOCMotor.h \
- ../Core/Src/common/base_classes/Sensor.h \
- ../Core/Src/common/base_classes/CurrentSense.h \
- ../Core/Src/common/base_classes/FOCDriver.h \
+Core/Src/cppMain.o: ../Core/Src/cppMain.cpp ../Core/Inc/cppMain.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h \
  ../Core/Inc/stm32f3xx_hal_conf.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h \
@@ -32,6 +28,11 @@ Core/Src/cppMain.o: ../Core/Src/cppMain.cpp ../Core/Src/SimpleFOC.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
+ ../Core/Inc/main.h ../Core/Src/SimpleFOC.h ../Core/Src/BLDCMotor.h \
+ ../Core/Src/common/base_classes/FOCMotor.h \
+ ../Core/Src/common/base_classes/Sensor.h \
+ ../Core/Src/common/base_classes/CurrentSense.h \
+ ../Core/Src/common/base_classes/FOCDriver.h \
  ../Core/Src/common/base_classes/../foc_utils.h \
  ../Core/Src/common/base_classes/StepperDriver.h \
  ../Core/Src/common/base_classes/BLDCDriver.h \
@@ -44,18 +45,13 @@ Core/Src/cppMain.o: ../Core/Src/cppMain.cpp ../Core/Src/SimpleFOC.h \
  ../Core/Src/common/base_classes/BLDCDriver.h \
  ../Core/Src/common/foc_utils.h ../Core/Src/common/defaults.h \
  ../Core/Src/sensors/Encoder.h ../Core/Src/sensors/../common/foc_utils.h \
- ../Core/Src/sensors/../common/base_classes/Sensor.h \
+ ../Core/Src/sensors/../common/base_classes/Sensor.h ../Core/Inc/main.h \
  ../Core/Src/sensors/GenericSensor.h ../Core/Src/drivers/BLDCDriver3PWM.h \
  ../Core/Src/drivers/../common/base_classes/BLDCDriver.h \
  ../Core/Src/drivers/../common/foc_utils.h \
  ../Core/Src/drivers/../common/defaults.h \
  ../Core/Src/drivers/hardware_api.h ../Core/Src/drivers/BLDCDriver6PWM.h
-../Core/Src/SimpleFOC.h:
-../Core/Src/BLDCMotor.h:
-../Core/Src/common/base_classes/FOCMotor.h:
-../Core/Src/common/base_classes/Sensor.h:
-../Core/Src/common/base_classes/CurrentSense.h:
-../Core/Src/common/base_classes/FOCDriver.h:
+../Core/Inc/cppMain.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 ../Core/Inc/stm32f3xx_hal_conf.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h:
@@ -85,6 +81,13 @@ Core/Src/cppMain.o: ../Core/Src/cppMain.cpp ../Core/Src/SimpleFOC.h \
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
+../Core/Inc/main.h:
+../Core/Src/SimpleFOC.h:
+../Core/Src/BLDCMotor.h:
+../Core/Src/common/base_classes/FOCMotor.h:
+../Core/Src/common/base_classes/Sensor.h:
+../Core/Src/common/base_classes/CurrentSense.h:
+../Core/Src/common/base_classes/FOCDriver.h:
 ../Core/Src/common/base_classes/../foc_utils.h:
 ../Core/Src/common/base_classes/StepperDriver.h:
 ../Core/Src/common/base_classes/BLDCDriver.h:
@@ -100,6 +103,7 @@ Core/Src/cppMain.o: ../Core/Src/cppMain.cpp ../Core/Src/SimpleFOC.h \
 ../Core/Src/sensors/Encoder.h:
 ../Core/Src/sensors/../common/foc_utils.h:
 ../Core/Src/sensors/../common/base_classes/Sensor.h:
+../Core/Inc/main.h:
 ../Core/Src/sensors/GenericSensor.h:
 ../Core/Src/drivers/BLDCDriver3PWM.h:
 ../Core/Src/drivers/../common/base_classes/BLDCDriver.h:

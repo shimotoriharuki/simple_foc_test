@@ -351,6 +351,7 @@ void BLDCMotor::loopFOC() {
   // This function will not have numerical issues because it uses Sensor::getMechanicalAngle() 
   // which is in range 0-2PI
   electrical_angle = electricalAngle();
+  /*
   switch (torque_controller) {
     case TorqueControlType::voltage:
       // no need to do anything really
@@ -384,7 +385,9 @@ void BLDCMotor::loopFOC() {
       // no torque control selected
       //SIMPLEFOC_DEBUG("MOT: no torque control selected!");
       break;
+
   }
+  */
 
   // set the phase voltage - FOC heart function :)
   setPhaseVoltage(voltage.q, voltage.d, electrical_angle);

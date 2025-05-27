@@ -8,10 +8,10 @@
 ../Core/Src/BLDCMotor.cpp:203:5:int BLDCMotor::alignCurrentSense()	2
 ../Core/Src/BLDCMotor.cpp:223:5:int BLDCMotor::alignSensor()	9
 ../Core/Src/BLDCMotor.cpp:308:5:int BLDCMotor::absoluteZeroSearch()	4
-../Core/Src/BLDCMotor.cpp:339:6:virtual void BLDCMotor::loopFOC()	14
-../Core/Src/BLDCMotor.cpp:398:6:virtual void BLDCMotor::move(float)	37
-../Core/Src/BLDCMotor.cpp:501:6:virtual void BLDCMotor::setPhaseVoltage(float, float, float)	15
-../Core/Src/BLDCMotor.cpp:619:7:float BLDCMotor::velocityOpenloop(float)	0
-../Core/Src/BLDCMotor.cpp:653:7:float BLDCMotor::angleOpenloop(float)	0
+../Core/Src/BLDCMotor.cpp:339:6:virtual void BLDCMotor::loopFOC()	5
+../Core/Src/BLDCMotor.cpp:401:6:virtual void BLDCMotor::move(float)	37
+../Core/Src/BLDCMotor.cpp:504:6:virtual void BLDCMotor::setPhaseVoltage(float, float, float)	15
+../Core/Src/BLDCMotor.cpp:622:7:float BLDCMotor::velocityOpenloop(float)	0
+../Core/Src/BLDCMotor.cpp:656:7:float BLDCMotor::angleOpenloop(float)	0
 /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:233:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	2
 /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:257:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	2
