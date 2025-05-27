@@ -2,5 +2,6 @@
 ../Core/Src/cppMain.cpp:22:6:void doB()	8	static
 ../Core/Src/cppMain.cpp:25:6:void doMotor(char*)	16	static
 ../Core/Src/cppMain.cpp:29:6:void cppInit()	8	static
-../Core/Src/cppMain.cpp:50:1:void __static_initialization_and_destruction_0()	24	static
-../Core/Src/cppMain.cpp:50:1:cpp)	8	static
+../Core/Src/cppMain.cpp:85:6:void cppLoop()	8	static
+../Core/Src/cppMain.cpp:104:1:void __static_initialization_and_destruction_0()	24	static
+../Core/Src/cppMain.cpp:104:1:cpp)	8	static

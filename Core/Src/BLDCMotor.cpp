@@ -339,13 +339,19 @@ int BLDCMotor::absoluteZeroSearch() {
 void BLDCMotor::loopFOC() {
   // update sensor - do this even in open-loop mode, as user may be switching between modes and we could lose track
   //                 of full rotations otherwise.
-  if (sensor) sensor->update();
+  if (sensor) {
+	  sensor->update();
+  }
 
   // if open-loop do nothing
-  if( controller==MotionControlType::angle_openloop || controller==MotionControlType::velocity_openloop ) return;
+  if( controller==MotionControlType::angle_openloop || controller==MotionControlType::velocity_openloop ){
+	  return;
+  }
   
   // if disabled do nothing
-  if(!enabled) return;
+  if(!enabled){
+	  return;
+  }
 
   // Needs the update() to be called first
   // This function will not have numerical issues because it uses Sensor::getMechanicalAngle() 
