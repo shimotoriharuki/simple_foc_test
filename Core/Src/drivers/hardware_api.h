@@ -28,6 +28,8 @@
 // flag returned if driver init fails
 #define SIMPLEFOC_DRIVER_INIT_FAILED ((void*)-1)
 
+#define COUNTER_PERIOD 719
+
 // generic implementation of the hardware specific structure
 // containing all the necessary driver parameters
 // will be returned as a void pointer from the _configurexPWM functions
@@ -37,6 +39,8 @@ typedef struct GenericDriverParams {
   long pwm_frequency;
   float dead_zone;
 } GenericDriverParams;
+
+
 
 
 /** 

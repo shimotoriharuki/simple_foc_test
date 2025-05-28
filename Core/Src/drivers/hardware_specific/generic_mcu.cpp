@@ -1,5 +1,7 @@
 
 #include "../hardware_api.h"
+#include "stm32f3xx_hal.h"
+#include "main.h"
 
 // if the mcu doen't have defiend analogWrite
 #if defined(ESP_H) && defined(ARDUINO_ARCH_ESP32) && !defined(analogWrite)
@@ -94,6 +96,15 @@ __attribute__((weak)) void _writeDutyCycle2PWM(float dc_a,  float dc_b, void* pa
 // - BLDC motor - 3PWM setting
 // - hardware speciffic
 __attribute__((weak)) void _writeDutyCycle3PWM(float dc_a,  float dc_b, float dc_c, void* params){
+	// Convert to 0~COUNTER_PERIOD
+	uint16_t converted_cnt_a = (int)_round(dc_a * COUNTER_PERIOD);
+	uint16_t converted_cnt_b = (int)_round(dc_b * COUNTER_PERIOD);
+	uint16_t converted_cnt_c = (int)_round(dc_c * COUNTER_PERIOD);
+
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, converted_cnt_a);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, converted_cnt_b);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, converted_cnt_c);
+
   // transform duty cycle from [0,1] to [0,255]
   //analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
   //analogWrite(((GenericDriverParams*)params)->pins[1], 255.0f*dc_b);

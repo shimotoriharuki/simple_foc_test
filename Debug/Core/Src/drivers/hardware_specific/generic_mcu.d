@@ -32,7 +32,8 @@ Core/Src/drivers/hardware_specific/generic_mcu.o: \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
- ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h
+ ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
+ ../Core/Inc/main.h
 ../Core/Src/drivers/hardware_specific/../hardware_api.h:
 ../Core/Src/drivers/hardware_specific/../../common/foc_utils.h:
 ../Core/Src/drivers/hardware_specific/../../common/base_classes/BLDCDriver.h:
@@ -66,3 +67,4 @@ Core/Src/drivers/hardware_specific/generic_mcu.o: \
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
+../Core/Inc/main.h:

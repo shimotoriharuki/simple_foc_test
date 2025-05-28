@@ -102,11 +102,11 @@ int BLDCMotor::init() {
       sensor_direction = Direction::CW;
   }
 
-  //_delay(500);
+  HAL_Delay(500);
   // enable motor
   //SIMPLEFOC_DEBUG("MOT: Enable driver.");
   enable();
-  //_delay(500);
+  HAL_Delay(500);
   motor_status = FOCMotorStatus::motor_uncalibrated;
   return 1;
 }
@@ -660,7 +660,6 @@ float BLDCMotor::velocityOpenloop(float target_velocity){
 // - target_angle - rad
 // it uses voltage_limit and velocity_limit variables
 float BLDCMotor::angleOpenloop(float target_angle){
-	/*
   // get current timestamp
   unsigned long now_us = _micros();
   // calculate the sample time from last call
@@ -696,5 +695,4 @@ float BLDCMotor::angleOpenloop(float target_angle){
   open_loop_timestamp = now_us;
 
   return Uq;
-  */
 }
