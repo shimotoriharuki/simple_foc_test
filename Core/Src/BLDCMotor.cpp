@@ -39,7 +39,7 @@ int trap_150_map[12][3] = {
 // - KV            - motor kv rating (rmp/v)
 // - L             - motor phase inductance
 BLDCMotor::BLDCMotor(int pp, float _R, float _KV, float _inductance)
-: FOCMotor()
+: FOCMotor(), absolute_zero_search_flag(false)
 {
   // save pole pairs number
   pole_pairs = pp;
@@ -316,11 +316,9 @@ int BLDCMotor::absoluteZeroSearch() {
   voltage_limit = voltage_sensor_align;
   shaft_angle = 0;
   while(sensor->needsSearch() && shaft_angle < _2PI){
-    angleOpenloop(1.5f*_2PI);
-    // call important for some sensors not to loose count
-    // not needed for the search
-    sensor->update();
+	  absolute_zero_search_flag = true;
   }
+  absolute_zero_search_flag = false;
   // disable motor
   setPhaseVoltage(0, 0, 0);
   // reinit the limits
@@ -332,6 +330,13 @@ int BLDCMotor::absoluteZeroSearch() {
   //  else { SIMPLEFOC_DEBUG("MOT: Success!"); }
  // }
   return !sensor->needsSearch();
+}
+
+void BLDCMotor::absoluteZeroSearchInterruptHandler() {
+	if(absolute_zero_search_flag == true){
+		angleOpenloop(1.5f*_2PI);
+		sensor->update();
+	}
 }
 
 // Iterative function looping FOC algorithm, setting Uq on the Motor
@@ -652,7 +657,7 @@ float BLDCMotor::velocityOpenloop(float target_velocity){
   // save timestamp for next call
   open_loop_timestamp = now_us;
 
-  return Uq;
+  return
   */
 }
 
@@ -661,9 +666,10 @@ float BLDCMotor::velocityOpenloop(float target_velocity){
 // it uses voltage_limit and velocity_limit variables
 float BLDCMotor::angleOpenloop(float target_angle){
   // get current timestamp
-  unsigned long now_us = _micros();
+  //unsigned long now_us = _micros();
   // calculate the sample time from last call
-  float Ts = (now_us - open_loop_timestamp) * 1e-6f;
+  //float Ts = (now_us - open_loop_timestamp) * 1e-6f;
+  float Ts = 1e-3f;
   // quick fix for strange cases (micros overflow + timestamp not defined)
   if(Ts <= 0 || Ts > 0.5f) Ts = 1e-3f;
 
@@ -692,7 +698,7 @@ float BLDCMotor::angleOpenloop(float target_angle){
   setPhaseVoltage(Uq,  0, _electricalAngle(_normalizeAngle(shaft_angle), pole_pairs));
 
   // save timestamp for next call
-  open_loop_timestamp = now_us;
+  //open_loop_timestamp = now_us;
 
   return Uq;
 }

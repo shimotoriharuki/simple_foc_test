@@ -107,7 +107,7 @@ void Encoder::handleIndex() {
 
 // Sensor update function. Safely copy volatile interrupt variables into Sensor base class state variables.
 void Encoder::update() {
-	encoder_cnt = TIM2->CNT;
+	pulse_counter = TIM2->CNT;
 
 	/*
   // Copy volatile variables in minimal-duration blocking section to ensure no interrupts are missed

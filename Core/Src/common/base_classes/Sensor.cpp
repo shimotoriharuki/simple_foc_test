@@ -1,5 +1,6 @@
 #include "Sensor.h"
 #include "../foc_utils.h"
+#include <math.h>
 //#include "../time_utils.h"
 
 
@@ -11,7 +12,7 @@ void Sensor::update() {
     //angle_prev_ts = _micros();
     float d_angle = val - angle_prev;
     // if overflow happened track it as full rotation
-    //if(abs(d_angle) > (0.8f*_2PI) ) full_rotations += ( d_angle > 0 ) ? -1 : 1;
+    if(abs(d_angle) > (0.8f*_2PI) ) full_rotations += ( d_angle > 0 ) ? -1 : 1;
     angle_prev = val;
 }
 

@@ -13,7 +13,7 @@ BLDCMotor motor(2);
 BLDCDriver3PWM driver(9, 10, 11, 12); // mini v1.1
 
 // encoder instance
-Encoder encoder(2, 3, 500);
+Encoder encoder(2, 3, 300);
 // Interrupt routine intialisation
 // channel A and B callbacks
 /*
@@ -103,4 +103,10 @@ void cppLoop()
 	// motor.monitor();
 
 	// user communication
+}
+
+void cppTimerInterrupt1ms()
+{
+	motor.absoluteZeroSearchInterruptHandler();
+
 }

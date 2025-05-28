@@ -81,6 +81,7 @@ class BLDCMotor
     * @param angle_el current electrical angle of the motor
     */
     void setPhaseVoltage(float Uq, float Ud, float angle_el) override;
+    void absoluteZeroSearchInterruptHandler();
 
   private:
     // FOC methods 
@@ -110,6 +111,7 @@ class BLDCMotor
     float angleOpenloop(float target_angle);
     // open loop variables
     long open_loop_timestamp;
+    bool absolute_zero_search_flag;
 };
 
 

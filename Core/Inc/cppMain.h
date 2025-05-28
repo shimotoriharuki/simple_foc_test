@@ -19,9 +19,7 @@ extern "C" {
 
 void cppInit(void);
 void cppExit(uint16_t);
-void cppFlip1ms(void);
-void cppFlip100ns(void);
-void cppFlip10ms(void);
+void cppTimerInterrupt1ms(void);
 void cppLoop(void);
 
 
