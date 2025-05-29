@@ -1,12 +1,12 @@
 ../Core/Src/sensors/../common/base_classes/Sensor.h:44:7:constexpr Sensor::Sensor()	1
-../Core/Src/sensors/Encoder.cpp:11:1:Encoder::Encoder(int, int, float, int)	1
-../Core/Src/sensors/Encoder.cpp:42:6:void Encoder::handleA()	1
-../Core/Src/sensors/Encoder.cpp:65:6:void Encoder::handleB()	1
-../Core/Src/sensors/Encoder.cpp:89:6:void Encoder::handleIndex()	1
-../Core/Src/sensors/Encoder.cpp:109:6:virtual void Encoder::update()	1
-../Core/Src/sensors/Encoder.cpp:127:7:virtual float Encoder::getSensorAngle()	1
-../Core/Src/sensors/Encoder.cpp:137:7:virtual float Encoder::getVelocity()	0
-../Core/Src/sensors/Encoder.cpp:181:5:virtual int Encoder::needsSearch()	3
-../Core/Src/sensors/Encoder.cpp:186:5:int Encoder::hasIndex()	1
-../Core/Src/sensors/Encoder.cpp:193:6:virtual void Encoder::init()	1
-../Core/Src/sensors/Encoder.cpp:229:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	1
+../Core/Src/sensors/Encoder.cpp:13:1:Encoder::Encoder(int, int, float, int)	1
+../Core/Src/sensors/Encoder.cpp:44:6:void Encoder::handleA()	1
+../Core/Src/sensors/Encoder.cpp:67:6:void Encoder::handleB()	1
+../Core/Src/sensors/Encoder.cpp:91:6:void Encoder::handleIndex()	1
+../Core/Src/sensors/Encoder.cpp:111:6:virtual void Encoder::update()	1
+../Core/Src/sensors/Encoder.cpp:130:7:virtual float Encoder::getSensorAngle()	1
+../Core/Src/sensors/Encoder.cpp:140:7:virtual float Encoder::getVelocity()	1
+../Core/Src/sensors/Encoder.cpp:185:5:virtual int Encoder::needsSearch()	3
+../Core/Src/sensors/Encoder.cpp:190:5:int Encoder::hasIndex()	1
+../Core/Src/sensors/Encoder.cpp:197:6:virtual void Encoder::init()	1
+../Core/Src/sensors/Encoder.cpp:233:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	1

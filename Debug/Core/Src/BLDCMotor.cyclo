@@ -13,7 +13,7 @@
 ../Core/Src/BLDCMotor.cpp:344:6:virtual void BLDCMotor::loopFOC()	5
 ../Core/Src/BLDCMotor.cpp:412:6:virtual void BLDCMotor::move(float)	37
 ../Core/Src/BLDCMotor.cpp:515:6:virtual void BLDCMotor::setPhaseVoltage(float, float, float)	15
-../Core/Src/BLDCMotor.cpp:633:7:float BLDCMotor::velocityOpenloop(float)	0
-../Core/Src/BLDCMotor.cpp:667:7:float BLDCMotor::angleOpenloop(float)	9
+../Core/Src/BLDCMotor.cpp:633:7:float BLDCMotor::velocityOpenloop(float)	1
+../Core/Src/BLDCMotor.cpp:668:7:float BLDCMotor::angleOpenloop(float)	9
 /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:233:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	2
 /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.0.202410170706/tools/arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:257:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	2

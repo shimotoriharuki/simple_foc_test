@@ -27,4 +27,5 @@ float LowPassFilter::operator() (float x)
     timestamp_prev = timestamp;
     return y;
     */
+	return x;
 }

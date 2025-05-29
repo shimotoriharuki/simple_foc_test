@@ -2,8 +2,8 @@
 ../Core/Src/drivers/../common/base_classes/FOCDriver.h:24:7:FOCDriver::FOCDriver()	16	static
 ../Core/Src/drivers/../common/base_classes/BLDCDriver.h:7:7:BLDCDriver::BLDCDriver()	16	static
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:4:1:BLDCDriver3PWM::BLDCDriver3PWM(int, int, int, int, int, int)	24	static
-../Core/Src/drivers/BLDCDriver3PWM.cpp:23:7:virtual void BLDCDriver3PWM::enable()	16	static
-../Core/Src/drivers/BLDCDriver3PWM.cpp:37:6:virtual void BLDCDriver3PWM::disable()	16	static
-../Core/Src/drivers/BLDCDriver3PWM.cpp:52:5:virtual int BLDCDriver3PWM::init()	16	static
-../Core/Src/drivers/BLDCDriver3PWM.cpp:86:6:virtual void BLDCDriver3PWM::setPhaseState(PhaseState, PhaseState, PhaseState)	16	static
-../Core/Src/drivers/BLDCDriver3PWM.cpp:98:6:virtual void BLDCDriver3PWM::setPwm(float, float, float)	24	static
+../Core/Src/drivers/BLDCDriver3PWM.cpp:24:7:virtual void BLDCDriver3PWM::enable()	16	static
+../Core/Src/drivers/BLDCDriver3PWM.cpp:38:6:virtual void BLDCDriver3PWM::disable()	16	static
+../Core/Src/drivers/BLDCDriver3PWM.cpp:53:5:virtual int BLDCDriver3PWM::init()	16	static
+../Core/Src/drivers/BLDCDriver3PWM.cpp:88:6:virtual void BLDCDriver3PWM::setPhaseState(PhaseState, PhaseState, PhaseState)	16	static
+../Core/Src/drivers/BLDCDriver3PWM.cpp:100:6:virtual void BLDCDriver3PWM::setPwm(float, float, float)	24	static

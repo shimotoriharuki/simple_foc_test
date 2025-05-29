@@ -659,6 +659,7 @@ float BLDCMotor::velocityOpenloop(float target_velocity){
 
   return
   */
+	return 0;
 }
 
 // Function (iterative) generating open loop movement towards the target angle

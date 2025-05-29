@@ -8,6 +8,8 @@
   - index pin     - (optional input)
 */
 
+uint32_t mon_encoder_cnt;
+
 Encoder::Encoder(int _encA, int _encB , float _ppr, int _index){
 
   // Encoder measurement structure init
@@ -108,6 +110,7 @@ void Encoder::handleIndex() {
 // Sensor update function. Safely copy volatile interrupt variables into Sensor base class state variables.
 void Encoder::update() {
 	pulse_counter = TIM2->CNT;
+	mon_encoder_cnt = pulse_counter;
 
 	/*
   // Copy volatile variables in minimal-duration blocking section to ensure no interrupts are missed
@@ -174,6 +177,7 @@ float Encoder::getVelocity(){
   prev_pulse_counter = copy_pulse_counter;
   return velocity;
   */
+	return 0;
 }
 
 // getter for index pin

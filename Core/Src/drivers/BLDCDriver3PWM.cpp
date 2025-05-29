@@ -14,7 +14,8 @@ BLDCDriver3PWM::BLDCDriver3PWM(int phA, int phB, int phC, int en1, int en2, int 
 
   // default power-supply value
   voltage_power_supply = DEF_POWER_SUPPLY;
-  voltage_limit = NOT_SET;
+  //voltage_limit = NOT_SET;
+  voltage_limit = DEF_POWER_SUPPLY;
   pwm_frequency = NOT_SET;
 
 }
@@ -60,6 +61,7 @@ int BLDCDriver3PWM::init() {
 		voltage_limit =  voltage_power_supply;
 	}
 
+		return 0;
 	/*
   pinMode(pwmA, OUTPUT);
   pinMode(pwmB, OUTPUT);
