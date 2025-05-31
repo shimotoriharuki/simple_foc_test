@@ -5,5 +5,5 @@
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:23:7:virtual void BLDCDriver3PWM::enable()	1
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:37:6:virtual void BLDCDriver3PWM::disable()	1
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:52:5:virtual int BLDCDriver3PWM::init()	3
-../Core/Src/drivers/BLDCDriver3PWM.cpp:87:6:virtual void BLDCDriver3PWM::setPhaseState(PhaseState, PhaseState, PhaseState)	1
-../Core/Src/drivers/BLDCDriver3PWM.cpp:99:6:virtual void BLDCDriver3PWM::setPwm(float, float, float)	13
+../Core/Src/drivers/BLDCDriver3PWM.cpp:90:6:virtual void BLDCDriver3PWM::setPhaseState(PhaseState, PhaseState, PhaseState)	1
+../Core/Src/drivers/BLDCDriver3PWM.cpp:102:6:virtual void BLDCDriver3PWM::setPwm(float, float, float)	13

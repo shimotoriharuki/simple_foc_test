@@ -28,7 +28,7 @@
 // flag returned if driver init fails
 #define SIMPLEFOC_DRIVER_INIT_FAILED ((void*)-1)
 
-#define COUNTER_PERIOD 719
+#define COUNTER_PERIOD 79
 
 // generic implementation of the hardware specific structure
 // containing all the necessary driver parameters

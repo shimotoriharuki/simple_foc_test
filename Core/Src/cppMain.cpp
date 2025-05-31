@@ -17,19 +17,18 @@ Encoder encoder(2, 3, 300);
 // Interrupt routine intialisation
 // channel A and B callbacks
 /*
-void doA(){
-	encoder.handleA();
-}
-void doB(){
-	encoder.handleB();
-}
-*/
-void doMotor(char* cmd) {
+ void doA(){
+ encoder.handleA();
+ }
+ void doB(){
+ encoder.handleB();
+ }
+ */
+void doMotor(char *cmd) {
 	//command.motor(&motor, cmd);
 }
 
-void cppInit()
-{
+void cppInit() {
 	// if SimpleFOCMini is stacked in arduino headers
 	// on pins 12,11,10,9,8
 	// pin 12 is used as ground
@@ -84,8 +83,7 @@ void cppInit()
 	HAL_Delay(1000);
 }
 
-void cppLoop()
-{
+void cppLoop() {
 	// main FOC algorithm function
 	// the faster you run this function the better
 	// Arduino UNO loop  ~1kHz
@@ -105,8 +103,7 @@ void cppLoop()
 	// user communication
 }
 
-void cppTimerInterrupt1ms()
-{
+void cppTimerInterrupt1ms() {
 	motor.absoluteZeroSearchInterruptHandler();
 
 }

@@ -60,7 +60,10 @@ int BLDCDriver3PWM::init() {
 		voltage_limit =  voltage_power_supply;
 	}
 
-		return 0;
+	params = _configure3PWM(pwm_frequency, pwmA, pwmB, pwmC);
+	initialized = (params!=SIMPLEFOC_DRIVER_INIT_FAILED);
+	return params!=SIMPLEFOC_DRIVER_INIT_FAILED;
+		//return 0;
 	/*
   pinMode(pwmA, OUTPUT);
   pinMode(pwmB, OUTPUT);
