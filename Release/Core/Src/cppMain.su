@@ -1,0 +1,6 @@
+../Core/Src/drivers/BLDCDriver3PWM.h:10:7:void* _configure3PWM(long int, int, int, int)	24	static
+../Core/Src/cppMain.cpp:43:6:void doMotor(char*)	0	static
+../Core/Src/cppMain.cpp:153:1:cpp)	24	static
+../Core/Src/cppMain.cpp:47:6:void cppInit()	16	static
+../Core/Src/cppMain.cpp:106:6:void cppLoop()	24	static
+../Core/Src/cppMain.cpp:141:6:void cppTimerInterrupt1ms()	8	static

@@ -1,0 +1,8 @@
+../Core/Src/common/base_classes/Sensor.cpp:9:6:virtual void Sensor::update()	8	static
+../Core/Src/common/base_classes/Sensor.cpp:59:7:virtual float Sensor::getMechanicalAngle()	0	static
+../Core/Src/common/base_classes/Sensor.cpp:65:7:virtual float Sensor::getAngle()	0	static
+../Core/Src/common/base_classes/Sensor.cpp:71:8:virtual double Sensor::getPreciseAngle()	16	static
+../Core/Src/common/base_classes/Sensor.cpp:77:9:virtual int32_t Sensor::getFullRotations()	0	static
+../Core/Src/common/base_classes/Sensor.cpp:83:5:virtual int Sensor::needsSearch()	0	static
+../Core/Src/common/base_classes/Sensor.cpp:43:6:virtual void Sensor::init()	8	static
+../Core/Src/common/base_classes/Sensor.cpp:22:7:virtual float Sensor::getVelocity()	0	static

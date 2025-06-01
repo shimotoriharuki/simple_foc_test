@@ -1,0 +1,7 @@
+../Core/Src/common/foc_utils.cpp:9:29:float _sin(float)	4
+../Core/Src/common/foc_utils.cpp:38:29:float _cos(float)	2
+../Core/Src/common/foc_utils.cpp:45:28:void _sincos(float, float*, float*)	1
+../Core/Src/common/foc_utils.cpp:56:29:float _atan2(float, float)	6
+../Core/Src/common/foc_utils.cpp:79:29:float _normalizeAngle(float)	2
+../Core/Src/common/foc_utils.cpp:85:7:float _electricalAngle(float, int)	1
+../Core/Src/common/foc_utils.cpp:92:29:float _sqrtApprox(float)	1

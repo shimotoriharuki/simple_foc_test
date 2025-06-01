@@ -7,6 +7,7 @@
 #include "../common/defaults.h"
 #include "hardware_api.h"
 
+
 /**
  3 pwm bldc driver class
 */
@@ -22,7 +23,7 @@ class BLDCDriver3PWM: public BLDCDriver
       @param en2 enable pin (optional input)
       @param en3 enable pin (optional input)
     */
-    BLDCDriver3PWM(int phA,int phB,int phC, GPIOPin *en1 = NULL, GPIOPin *en2 = NULL, GPIOPin *en3 = NULL);
+    BLDCDriver3PWM(PWMPin *phA, PWMPin *phB, PWMPin *phC, GPIOPin *en1 = NULL, GPIOPin *en2 = NULL, GPIOPin *en3 = NULL);
     
     /**  Motor hardware init function */
   	int init() override;
@@ -39,9 +40,14 @@ class BLDCDriver3PWM: public BLDCDriver
     int enableB_pin; //!< enable pin number
     int enableC_pin; //!< enable pin number
 
+    PWMPin *phA_;
+    PWMPin *phB_;
+    PWMPin *phC_;
+
     GPIOPin *en1_;
     GPIOPin *en2_;
     GPIOPin *en3_;
+
 
     /** 
      * Set phase voltages to the hardware 
@@ -63,6 +69,5 @@ class BLDCDriver3PWM: public BLDCDriver
     virtual void setPhaseState(PhaseState sa, PhaseState sb, PhaseState sc) override;
   private:
 };
-
 
 #endif

@@ -71,6 +71,11 @@ struct GPIOPin{
 	uint16_t channel;
 };
 
+struct PWMPin{
+	TIM_HandleTypeDef *htim;
+	uint16_t channel;
+};
+
 /**
  *  Function approximating the sine calculation by using fixed size array
  * - execution time ~40us (Arduino UNO)

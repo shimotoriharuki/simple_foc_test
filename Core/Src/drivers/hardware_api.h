@@ -40,6 +40,12 @@ typedef struct GenericDriverParams {
   float dead_zone;
 } GenericDriverParams;
 
+typedef struct STM32HALDriverParams {
+  PWMPin *pins[6];
+  long pwm_frequency;
+  float dead_zone;
+} STM32HALDriverParams;
+
 
 
 

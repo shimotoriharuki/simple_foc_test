@@ -1,0 +1,15 @@
+../Core/Src/BLDCMotor.cpp:64:6:virtual void BLDCMotor::linkDriver(BLDCDriver*)	1
+../Core/Src/BLDCMotor.cpp:116:6:virtual void BLDCMotor::disable()	2
+../Core/Src/BLDCMotor.cpp:128:6:virtual void BLDCMotor::enable()	2
+../Core/Src/BLDCMotor.cpp:523:6:virtual void BLDCMotor::setPhaseVoltage(float, float, float)	17
+../Core/Src/BLDCMotor.cpp:69:5:virtual int BLDCMotor::init()	10
+../Core/Src/BLDCMotor.cpp:352:6:virtual void BLDCMotor::loopFOC()	4
+../Core/Src/BLDCMotor.cpp:41:1:BLDCMotor::BLDCMotor(int, float, float, float)	1
+../Core/Src/BLDCMotor.cpp:203:5:int BLDCMotor::alignCurrentSense()	1
+../Core/Src/BLDCMotor.cpp:316:5:int BLDCMotor::absoluteZeroSearch()	3
+../Core/Src/BLDCMotor.cpp:223:5:int BLDCMotor::alignSensor()	8
+../Core/Src/BLDCMotor.cpp:149:6:virtual int BLDCMotor::initFOC()	7
+../Core/Src/BLDCMotor.cpp:641:7:float BLDCMotor::velocityOpenloop(float)	3
+../Core/Src/BLDCMotor.cpp:674:7:float BLDCMotor::angleOpenloop(float)	6
+../Core/Src/BLDCMotor.cpp:343:6:void BLDCMotor::absoluteZeroSearchInterruptHandler()	2
+../Core/Src/BLDCMotor.cpp:420:6:virtual void BLDCMotor::move(float)	29

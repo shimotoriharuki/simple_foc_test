@@ -1,0 +1,11 @@
+../Core/Src/sensors/Encoder.cpp:111:6:virtual void Encoder::update()	0	static
+../Core/Src/sensors/Encoder.cpp:136:7:virtual float Encoder::getSensorAngle()	0	static
+../Core/Src/sensors/Encoder.cpp:146:7:virtual float Encoder::getVelocity()	0	static
+../Core/Src/sensors/Encoder.cpp:190:5:virtual int Encoder::needsSearch()	0	static
+../Core/Src/sensors/Encoder.cpp:202:6:virtual void Encoder::init()	8	static
+../Core/Src/sensors/Encoder.cpp:13:1:Encoder::Encoder(int, int, float, int)	20	static
+../Core/Src/sensors/Encoder.cpp:44:6:void Encoder::handleA()	0	static
+../Core/Src/sensors/Encoder.cpp:67:6:void Encoder::handleB()	0	static
+../Core/Src/sensors/Encoder.cpp:91:6:void Encoder::handleIndex()	0	static
+../Core/Src/sensors/Encoder.cpp:195:5:int Encoder::hasIndex()	0	static
+../Core/Src/sensors/Encoder.cpp:249:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	0	static

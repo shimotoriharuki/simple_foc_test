@@ -1,8 +1,40 @@
 #include "BLDCDriver3PWM.h"
 #include "main.h"
 
-BLDCDriver3PWM::BLDCDriver3PWM(int phA, int phB, int phC, GPIOPin *en1, GPIOPin *en2, GPIOPin *en3){
+void* _configure3PWM(long pwm_frequency, const PWMPin *pinA, const PWMPin *pinB, const PWMPin *pinC) {
+  STM32HALDriverParams* params = new STM32HALDriverParams{
+    .pins = { (PWMPin*)pinA, (PWMPin*)pinB, (PWMPin*)pinC },
+    .pwm_frequency = pwm_frequency
+  };
+  return params;
+}
+
+void _writeDutyCycle3PWM(float dc_a,  float dc_b, float dc_c, void* params){
+	// Convert to 0~COUNTER_PERIOD
+	uint16_t converted_cnt_a = (int)_round(dc_a * COUNTER_PERIOD);
+	uint16_t converted_cnt_b = (int)_round(dc_b * COUNTER_PERIOD);
+	uint16_t converted_cnt_c = (int)_round(dc_c * COUNTER_PERIOD);
+
+	__HAL_TIM_SET_COMPARE(((STM32HALDriverParams*)params)->pins[0]->htim, ((STM32HALDriverParams*)params)->pins[0]->channel, converted_cnt_a);
+	__HAL_TIM_SET_COMPARE(((STM32HALDriverParams*)params)->pins[1]->htim, ((STM32HALDriverParams*)params)->pins[1]->channel, converted_cnt_b);
+	__HAL_TIM_SET_COMPARE(((STM32HALDriverParams*)params)->pins[2]->htim, ((STM32HALDriverParams*)params)->pins[2]->channel, converted_cnt_c);
+	/*
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, converted_cnt_b);
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, converted_cnt_c);
+	*/
+
+  // transform duty cycle from [0,1] to [0,255]
+  //analogWrite(((GenericDriverParams*)params)->pins[0], 255.0f*dc_a);
+  //analogWrite(((GenericDriverParams*)params)->pins[1], 255.0f*dc_b);
+  //analogWrite(((GenericDriverParams*)params)->pins[2], 255.0f*dc_c);
+}
+
+BLDCDriver3PWM::BLDCDriver3PWM(PWMPin *phA, PWMPin *phB, PWMPin *phC, GPIOPin *en1, GPIOPin *en2, GPIOPin *en3){
   // Pin initialization
+
+	phA_ = phA;
+	phB_ = phB;
+	phC_ = phC;
 
 	en1_ = en1;
 	en2_ = en2;
@@ -59,16 +91,25 @@ void BLDCDriver3PWM::disable()
 // init hardware pins
 int BLDCDriver3PWM::init() {
   // PWM pins
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_RESET);
+	HAL_TIM_PWM_Start(phA_->htim, phA_->channel);
+	HAL_TIM_PWM_Start(phB_->htim, phB_->channel);
+	HAL_TIM_PWM_Start(phC_->htim, phC_->channel);
+
+	if ( en1_ != NULL ) {
+		HAL_GPIO_WritePin(en1_->port, en1_->channel, GPIO_PIN_RESET);
+	}
+	if ( en2_ != NULL ) {
+		HAL_GPIO_WritePin(en2_->port, en2_->channel, GPIO_PIN_RESET);
+	}
+	if ( en3_ != NULL ) {
+		HAL_GPIO_WritePin(en3_->port, en3_->channel, GPIO_PIN_RESET);
+	}
 
 	if(!_isset(voltage_limit) || voltage_limit > voltage_power_supply){
 		voltage_limit =  voltage_power_supply;
 	}
 
-	params = _configure3PWM(pwm_frequency, pwmA, pwmB, pwmC);
+	params = _configure3PWM(pwm_frequency, phA_, phB_, phC_);
 	initialized = (params!=SIMPLEFOC_DRIVER_INIT_FAILED);
 	return params!=SIMPLEFOC_DRIVER_INIT_FAILED;
 		//return 0;
@@ -123,3 +164,4 @@ void BLDCDriver3PWM::setPwm(float Ua, float Ub, float Uc) {
   // hardware specific function - depending on driver and mcu
   _writeDutyCycle3PWM(dc_a, dc_b, dc_c, params);
 }
+
