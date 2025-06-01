@@ -55,12 +55,13 @@ void cppInit() {
 	motor.linkDriver(&driver);
 
 	// aligning voltage [V]
-	motor.voltage_sensor_align = 3;
+	motor.voltage_sensor_align = 1;
 
 	// set motion control loop to be used
 	//motor.controller = MotionControlType::angle_openloop;
 	//motor.controller = MotionControlType::velocity_openloop;
-	motor.controller = MotionControlType::velocity;
+	//motor.controller = MotionControlType::velocity;
+	motor.controller = MotionControlType::angle;
 
 	// contoller configuration
 	// default parameters in defaults.h
@@ -79,9 +80,9 @@ void cppInit() {
 	motor.LPF_velocity.Tf = 0.01f;
 
 	// angle P controller
-	motor.P_angle.P = 10;
+	motor.P_angle.P = 30;
 	//  maximal velocity of the position control
-	motor.velocity_limit = 3;
+	motor.velocity_limit = 50;
 
 	// initialize motor
 	motor.init();
@@ -99,7 +100,7 @@ void cppLoop() {
 	//motor.loopFOC();
 
 	motor_processing_flag = true;
-	HAL_Delay(2000);
+	HAL_Delay(6000);
 	motor.disable();
 	while(1){}
 
@@ -123,7 +124,7 @@ void cppTimerInterrupt1ms() {
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(2000);
+		motor.move(6.28);
 
 		angle += 3.14/5000;
 		mon_angle = angle;

@@ -3950,89 +3950,89 @@ void cppInit() {
  80024d2:	f7fe fa0d 	bl	80008f0 <_ZN9BLDCMotor10linkDriverEP10BLDCDriver>
 
 	// aligning voltage [V]
-	motor.voltage_sensor_align = 3;
+	motor.voltage_sensor_align = 1;
  80024d6:	4b1c      	ldr	r3, [pc, #112]	@ (8002548 <cppInit+0xa0>)
- 80024d8:	4a1d      	ldr	r2, [pc, #116]	@ (8002550 <cppInit+0xa8>)
- 80024da:	641a      	str	r2, [r3, #64]	@ 0x40
+ 80024d8:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 80024dc:	641a      	str	r2, [r3, #64]	@ 0x40
 
 	// set motion control loop to be used
 	//motor.controller = MotionControlType::angle_openloop;
 	//motor.controller = MotionControlType::velocity_openloop;
-	motor.controller = MotionControlType::velocity;
- 80024dc:	4b1a      	ldr	r3, [pc, #104]	@ (8002548 <cppInit+0xa0>)
- 80024de:	2201      	movs	r2, #1
- 80024e0:	f883 2069 	strb.w	r2, [r3, #105]	@ 0x69
+	//motor.controller = MotionControlType::velocity;
+	motor.controller = MotionControlType::angle;
+ 80024de:	4b1a      	ldr	r3, [pc, #104]	@ (8002548 <cppInit+0xa0>)
+ 80024e0:	2202      	movs	r2, #2
+ 80024e2:	f883 2069 	strb.w	r2, [r3, #105]	@ 0x69
 
 	// contoller configuration
 	// default parameters in defaults.h
 
 	// velocity PI controller parameters
 	motor.PID_velocity.P = 0.005f;
- 80024e4:	4b18      	ldr	r3, [pc, #96]	@ (8002548 <cppInit+0xa0>)
- 80024e6:	4a1b      	ldr	r2, [pc, #108]	@ (8002554 <cppInit+0xac>)
- 80024e8:	f8c3 20cc 	str.w	r2, [r3, #204]	@ 0xcc
+ 80024e6:	4b18      	ldr	r3, [pc, #96]	@ (8002548 <cppInit+0xa0>)
+ 80024e8:	4a19      	ldr	r2, [pc, #100]	@ (8002550 <cppInit+0xa8>)
+ 80024ea:	f8c3 20cc 	str.w	r2, [r3, #204]	@ 0xcc
 	motor.PID_velocity.I = 1.0f;
- 80024ec:	4b16      	ldr	r3, [pc, #88]	@ (8002548 <cppInit+0xa0>)
- 80024ee:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
- 80024f2:	f8c3 20d0 	str.w	r2, [r3, #208]	@ 0xd0
+ 80024ee:	4b16      	ldr	r3, [pc, #88]	@ (8002548 <cppInit+0xa0>)
+ 80024f0:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 80024f4:	f8c3 20d0 	str.w	r2, [r3, #208]	@ 0xd0
 	motor.PID_velocity.D = 0;
- 80024f6:	4b14      	ldr	r3, [pc, #80]	@ (8002548 <cppInit+0xa0>)
- 80024f8:	f04f 0200 	mov.w	r2, #0
- 80024fc:	f8c3 20d4 	str.w	r2, [r3, #212]	@ 0xd4
+ 80024f8:	4b13      	ldr	r3, [pc, #76]	@ (8002548 <cppInit+0xa0>)
+ 80024fa:	f04f 0200 	mov.w	r2, #0
+ 80024fe:	f8c3 20d4 	str.w	r2, [r3, #212]	@ 0xd4
 	// default voltage_power_supply
 	motor.voltage_limit = 8;
- 8002500:	4b11      	ldr	r3, [pc, #68]	@ (8002548 <cppInit+0xa0>)
- 8002502:	f04f 4282 	mov.w	r2, #1090519040	@ 0x41000000
- 8002506:	659a      	str	r2, [r3, #88]	@ 0x58
+ 8002502:	4b11      	ldr	r3, [pc, #68]	@ (8002548 <cppInit+0xa0>)
+ 8002504:	f04f 4282 	mov.w	r2, #1090519040	@ 0x41000000
+ 8002508:	659a      	str	r2, [r3, #88]	@ 0x58
 	// jerk control using voltage voltage ramp
 	// default value is 300 volts per sec  ~ 0.3V per millisecond
 	motor.PID_velocity.output_ramp = 300;
- 8002508:	4b0f      	ldr	r3, [pc, #60]	@ (8002548 <cppInit+0xa0>)
- 800250a:	4a13      	ldr	r2, [pc, #76]	@ (8002558 <cppInit+0xb0>)
- 800250c:	f8c3 20d8 	str.w	r2, [r3, #216]	@ 0xd8
+ 800250a:	4b0f      	ldr	r3, [pc, #60]	@ (8002548 <cppInit+0xa0>)
+ 800250c:	4a11      	ldr	r2, [pc, #68]	@ (8002554 <cppInit+0xac>)
+ 800250e:	f8c3 20d8 	str.w	r2, [r3, #216]	@ 0xd8
 
 	// velocity low pass filtering time constant
 	motor.LPF_velocity.Tf = 0.01f;
- 8002510:	4b0d      	ldr	r3, [pc, #52]	@ (8002548 <cppInit+0xa0>)
- 8002512:	4a12      	ldr	r2, [pc, #72]	@ (800255c <cppInit+0xb4>)
- 8002514:	f8c3 2114 	str.w	r2, [r3, #276]	@ 0x114
+ 8002512:	4b0d      	ldr	r3, [pc, #52]	@ (8002548 <cppInit+0xa0>)
+ 8002514:	4a10      	ldr	r2, [pc, #64]	@ (8002558 <cppInit+0xb0>)
+ 8002516:	f8c3 2114 	str.w	r2, [r3, #276]	@ 0x114
 
 	// angle P controller
-	motor.P_angle.P = 10;
- 8002518:	4b0b      	ldr	r3, [pc, #44]	@ (8002548 <cppInit+0xa0>)
- 800251a:	4a11      	ldr	r2, [pc, #68]	@ (8002560 <cppInit+0xb8>)
- 800251c:	f8c3 20f0 	str.w	r2, [r3, #240]	@ 0xf0
+	motor.P_angle.P = 30;
+ 800251a:	4b0b      	ldr	r3, [pc, #44]	@ (8002548 <cppInit+0xa0>)
+ 800251c:	4a0f      	ldr	r2, [pc, #60]	@ (800255c <cppInit+0xb4>)
+ 800251e:	f8c3 20f0 	str.w	r2, [r3, #240]	@ 0xf0
 	//  maximal velocity of the position control
-	motor.velocity_limit = 3;
- 8002520:	4b09      	ldr	r3, [pc, #36]	@ (8002548 <cppInit+0xa0>)
- 8002522:	4a0b      	ldr	r2, [pc, #44]	@ (8002550 <cppInit+0xa8>)
- 8002524:	661a      	str	r2, [r3, #96]	@ 0x60
+	motor.velocity_limit = 50;
+ 8002522:	4b09      	ldr	r3, [pc, #36]	@ (8002548 <cppInit+0xa0>)
+ 8002524:	4a0e      	ldr	r2, [pc, #56]	@ (8002560 <cppInit+0xb8>)
+ 8002526:	661a      	str	r2, [r3, #96]	@ 0x60
 
 	// initialize motor
 	motor.init();
- 8002526:	4808      	ldr	r0, [pc, #32]	@ (8002548 <cppInit+0xa0>)
- 8002528:	f7fe f9f2 	bl	8000910 <_ZN9BLDCMotor4initEv>
+ 8002528:	4807      	ldr	r0, [pc, #28]	@ (8002548 <cppInit+0xa0>)
+ 800252a:	f7fe f9f1 	bl	8000910 <_ZN9BLDCMotor4initEv>
 	// align encoder and start FOC
 	motor.initFOC();
- 800252c:	4806      	ldr	r0, [pc, #24]	@ (8002548 <cppInit+0xa0>)
- 800252e:	f7fe fb13 	bl	8000b58 <_ZN9BLDCMotor7initFOCEv>
+ 800252e:	4806      	ldr	r0, [pc, #24]	@ (8002548 <cppInit+0xa0>)
+ 8002530:	f7fe fb12 	bl	8000b58 <_ZN9BLDCMotor7initFOCEv>
 
 	HAL_Delay(1000);
- 8002532:	f44f 707a 	mov.w	r0, #1000	@ 0x3e8
- 8002536:	f001 ff1d 	bl	8004374 <HAL_Delay>
+ 8002534:	f44f 707a 	mov.w	r0, #1000	@ 0x3e8
+ 8002538:	f001 ff1c 	bl	8004374 <HAL_Delay>
 }
- 800253a:	bf00      	nop
- 800253c:	bd80      	pop	{r7, pc}
- 800253e:	bf00      	nop
+ 800253c:	bf00      	nop
+ 800253e:	bd80      	pop	{r7, pc}
  8002540:	20000490 	.word	0x20000490
  8002544:	20000388 	.word	0x20000388
  8002548:	200001d4 	.word	0x200001d4
  800254c:	20000348 	.word	0x20000348
- 8002550:	40400000 	.word	0x40400000
- 8002554:	3ba3d70a 	.word	0x3ba3d70a
- 8002558:	43960000 	.word	0x43960000
- 800255c:	3c23d70a 	.word	0x3c23d70a
- 8002560:	41200000 	.word	0x41200000
+ 8002550:	3ba3d70a 	.word	0x3ba3d70a
+ 8002554:	43960000 	.word	0x43960000
+ 8002558:	3c23d70a 	.word	0x3c23d70a
+ 800255c:	41f00000 	.word	0x41f00000
+ 8002560:	42480000 	.word	0x42480000
 
 08002564 <cppLoop>:
 
@@ -4048,8 +4048,8 @@ void cppLoop() {
  8002568:	4b05      	ldr	r3, [pc, #20]	@ (8002580 <cppLoop+0x1c>)
  800256a:	2201      	movs	r2, #1
  800256c:	701a      	strb	r2, [r3, #0]
-	HAL_Delay(2000);
- 800256e:	f44f 60fa 	mov.w	r0, #2000	@ 0x7d0
+	HAL_Delay(6000);
+ 800256e:	f241 7070 	movw	r0, #6000	@ 0x1770
  8002572:	f001 feff 	bl	8004374 <HAL_Delay>
 	motor.disable();
  8002576:	4803      	ldr	r0, [pc, #12]	@ (8002584 <cppLoop+0x20>)
@@ -4083,7 +4083,7 @@ void cppTimerInterrupt1ms() {
 		motor.loopFOC();
  800259a:	4813      	ldr	r0, [pc, #76]	@ (80025e8 <cppTimerInterrupt1ms+0x60>)
  800259c:	f7fe fdac 	bl	80010f8 <_ZN9BLDCMotor7loopFOCEv>
-		motor.move(2000);
+		motor.move(6.28);
  80025a0:	ed9f 0a13 	vldr	s0, [pc, #76]	@ 80025f0 <cppTimerInterrupt1ms+0x68>
  80025a4:	4810      	ldr	r0, [pc, #64]	@ (80025e8 <cppTimerInterrupt1ms+0x60>)
  80025a6:	f7fe fdef 	bl	8001188 <_ZN9BLDCMotor4moveEf>
@@ -4120,7 +4120,7 @@ void cppTimerInterrupt1ms() {
  80025e4:	3f44940b 	.word	0x3f44940b
  80025e8:	200001d4 	.word	0x200001d4
  80025ec:	200003ec 	.word	0x200003ec
- 80025f0:	44fa0000 	.word	0x44fa0000
+ 80025f0:	40c8f5c3 	.word	0x40c8f5c3
  80025f4:	200003f4 	.word	0x200003f4
  80025f8:	200003f0 	.word	0x200003f0
 
