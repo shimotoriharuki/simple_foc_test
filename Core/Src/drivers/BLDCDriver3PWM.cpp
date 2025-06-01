@@ -46,15 +46,13 @@ void  BLDCDriver3PWM::enable(){
 // disable motor driver
 void BLDCDriver3PWM::disable()
 {
-  // set zero to PWM
-  setPwm(0, 0, 0);
-  // disable the driver - if enable_pin pin available
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_RESET);
-  /*
-  if ( _isset(enableA_pin) ) digitalWrite(enableA_pin, !enable_active_high);
-  if ( _isset(enableB_pin) ) digitalWrite(enableB_pin, !enable_active_high);
-  if ( _isset(enableC_pin) ) digitalWrite(enableC_pin, !enable_active_high);
-  */
+	// set zero to PWM
+	setPwm(0, 0, 0);
+	// disable the driver - if enable_pin pin available
+	// enable_pin the driver - if enable_pin pin available
+	if ( en1_ != NULL ) HAL_GPIO_WritePin(en1_->port, en1_->channel, GPIO_PIN_RESET);
+	if ( en2_ != NULL ) HAL_GPIO_WritePin(en2_->port, en2_->channel, GPIO_PIN_RESET);
+	if ( en3_ != NULL ) HAL_GPIO_WritePin(en3_->port, en3_->channel, GPIO_PIN_RESET);
 
 }
 
