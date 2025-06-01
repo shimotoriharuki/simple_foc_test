@@ -242,7 +242,7 @@ int BLDCMotor::alignSensor() {
       float angle = _3PI_2 + _2PI * i / 500.0f;
       setPhaseVoltage(voltage_align, 0,  angle);
 	    sensor->update();
-      //_delay(2);
+      HAL_Delay(2);
     }
     // take and angle in the middle
     sensor->update();
@@ -251,13 +251,13 @@ int BLDCMotor::alignSensor() {
     for (int i = 500; i >=0; i-- ) {
       float angle = _3PI_2 + _2PI * i / 500.0f ;
       setPhaseVoltage(voltage_align, 0,  angle);
-	    sensor->update();
-      //_delay(2);
+      sensor->update();
+      HAL_Delay(2);
     }
     sensor->update();
     float end_angle = sensor->getAngle();
-    // setPhaseVoltage(0, 0, 0);
-    //_delay(200);
+    setPhaseVoltage(0, 0, 0);
+    HAL_Delay(200);
     // determine the direction the sensor moved
     float moved =  fabs(mid_angle - end_angle);
     if (moved<MIN_ANGLE_DETECT_MOVEMENT) { // minimum angle to detect movement
@@ -278,28 +278,32 @@ int BLDCMotor::alignSensor() {
       //SIMPLEFOC_DEBUG("MOT: PP check: OK!");
     }
 
-  } //else { SIMPLEFOC_DEBUG("MOT: Skip dir calib."); }
+  } else {
+	 // SIMPLEFOC_DEBUG("MOT: Skip dir calib.");
+  }
 
   // zero electric angle not known
   if(!_isset(zero_electric_angle)){
     // align the electrical phases of the motor and sensor
     // set angle -90(270 = 3PI/2) degrees
     setPhaseVoltage(voltage_align, 0,  _3PI_2);
-    //_delay(700);
+    HAL_Delay(700);
     // read the sensor
     sensor->update();
     // get the current zero electric angle
     zero_electric_angle = 0;
     zero_electric_angle = electricalAngle();
-    //zero_electric_angle =  _normalizeAngle(_electricalAngle(sensor_direction*sensor->getAngle(), pole_pairs));
-    //_delay(20);
+    zero_electric_angle =  _normalizeAngle(_electricalAngle(sensor_direction*sensor->getAngle(), pole_pairs));
+    HAL_Delay(20);
     //if(monitor_port){
     //  SIMPLEFOC_DEBUG("MOT: Zero elec. angle: ", zero_electric_angle);
     //}
     // stop everything
     setPhaseVoltage(0, 0, 0);
-    //_delay(200);
-  } //else { SIMPLEFOC_DEBUG("MOT: Skip offset calib."); }
+    HAL_Delay(200);
+  } else {
+	  //SIMPLEFOC_DEBUG("MOT: Skip offset calib.");
+  }
   return exit_flag;
 }
 

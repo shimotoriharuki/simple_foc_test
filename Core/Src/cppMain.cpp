@@ -94,7 +94,7 @@ void cppLoop() {
 	// velocity, position or voltage (defined in motor.controller)
 	// this function can be run at much lower frequency than loopFOC() function
 	// You can also use motor.move() and set the motor.target in the code
-	motor.move();
+	motor.move(1);
 
 	// function intended to be used with serial plotter to monitor motor variables
 	// significantly slowing the execution down!!!!

@@ -112,6 +112,12 @@ void Encoder::update() {
 	pulse_counter = TIM2->CNT;
 	mon_encoder_cnt = pulse_counter;
 
+  long copy_pulse_counter = pulse_counter;
+
+  // TODO: numerical precision issue here if the pulse_counter overflows the angle will be lost
+  full_rotations = copy_pulse_counter / (int)cpr;
+  angle_prev = _2PI * ((copy_pulse_counter) % ((int)cpr)) / ((float)cpr);
+
 	/*
   // Copy volatile variables in minimal-duration blocking section to ensure no interrupts are missed
   noInterrupts();
