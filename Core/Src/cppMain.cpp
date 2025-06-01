@@ -8,7 +8,8 @@
 #include "SimpleFOC.h"
 
 // BLDC motor & driver instance
-BLDCMotor motor(2, 6.9, 492);
+//BLDCMotor motor(8, 6.9, 492);
+BLDCMotor motor(8);
 // BLDCDriver3PWM driver = BLDCDriver3PWM(11, 10, 9, 8); // mini v1.0
 BLDCDriver3PWM driver(9, 10, 11, 12); // mini v1.1
 
@@ -65,8 +66,8 @@ void cppInit() {
 	// default parameters in defaults.h
 
 	// velocity PI controller parameters
-	motor.PID_velocity.P = 0.10f;
-	motor.PID_velocity.I = 0.0f;
+	motor.PID_velocity.P = 0.010f;
+	motor.PID_velocity.I = 1.0f;
 	motor.PID_velocity.D = 0;
 	// default voltage_power_supply
 	motor.voltage_limit = 3;
@@ -122,7 +123,7 @@ void cppTimerInterrupt1ms() {
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(100);
+		motor.move(10);
 
 		angle += 3.14/5000;
 		mon_angle = angle;
