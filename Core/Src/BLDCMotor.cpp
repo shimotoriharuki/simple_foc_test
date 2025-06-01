@@ -636,10 +636,10 @@ void BLDCMotor::setPhaseVoltage(float Uq, float Ud, float angle_el) {
 // it uses voltage_limit variable
 float BLDCMotor::velocityOpenloop(float target_velocity){
   // get current timestamp
-	/*
-  unsigned long now_us = _micros();
+  //unsigned long now_us = _micros();
   // calculate the sample time from last call
-  float Ts = (now_us - open_loop_timestamp) * 1e-6f;
+  //float Ts = (now_us - open_loop_timestamp) * 1e-6f;
+  float Ts = 1e-3f;
   // quick fix for strange cases (micros overflow + timestamp not defined)
   if(Ts <= 0 || Ts > 0.5f) Ts = 1e-3f;
 
@@ -659,11 +659,9 @@ float BLDCMotor::velocityOpenloop(float target_velocity){
   setPhaseVoltage(Uq,  0, _electricalAngle(shaft_angle, pole_pairs));
 
   // save timestamp for next call
-  open_loop_timestamp = now_us;
+  //open_loop_timestamp = now_us;
 
-  return
-  */
-	return 0;
+  return Uq;
 }
 
 // Function (iterative) generating open loop movement towards the target angle

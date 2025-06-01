@@ -1,6 +1,6 @@
 ../Core/Src/cppMain.cpp:31:6:void doMotor(char*)	16	static
 ../Core/Src/cppMain.cpp:35:6:void cppInit()	8	static
-../Core/Src/cppMain.cpp:91:6:void cppLoop()	8	static
-../Core/Src/cppMain.cpp:116:6:void cppTimerInterrupt1ms()	8	static
-../Core/Src/cppMain.cpp:130:1:void __static_initialization_and_destruction_0()	24	static
-../Core/Src/cppMain.cpp:130:1:cpp)	8	static
+../Core/Src/cppMain.cpp:92:6:void cppLoop()	8	static
+../Core/Src/cppMain.cpp:117:6:void cppTimerInterrupt1ms()	8	static
+../Core/Src/cppMain.cpp:131:1:void __static_initialization_and_destruction_0()	24	static
+../Core/Src/cppMain.cpp:131:1:cpp)	8	static

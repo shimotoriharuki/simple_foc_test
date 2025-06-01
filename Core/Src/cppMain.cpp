@@ -57,7 +57,8 @@ void cppInit() {
 	motor.voltage_sensor_align = 3;
 
 	// set motion control loop to be used
-	motor.controller = MotionControlType::angle_openloop;
+	//motor.controller = MotionControlType::angle_openloop;
+	motor.controller = MotionControlType::velocity_openloop;
 
 	// contoller configuration
 	// default parameters in defaults.h
@@ -120,7 +121,7 @@ void cppTimerInterrupt1ms() {
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(10);
+		motor.move(100);
 
 		angle += 3.14/5000;
 		mon_angle = angle;
