@@ -2,6 +2,7 @@
 #define FOCUTILS_LIB_H
 
 //#include "Arduino.h"
+#include "stm32f3xx_hal.h"
 
 // sign function
 #define _sign(a) ( ( (a) < 0 )  ?  -1   : ( (a) > 0 ) )
@@ -65,6 +66,10 @@ struct ABCurrent_s
     float beta;
 };
 
+struct GPIOPin{
+	GPIO_TypeDef * port;
+	uint16_t channel;
+};
 
 /**
  *  Function approximating the sine calculation by using fixed size array

@@ -1,6 +1,6 @@
-../Core/Src/drivers/../common/base_classes/BLDCDriver.h:33:28:virtual DriverType BLDCDriver::type()	1
+../Core/Src/drivers/../common/base_classes/BLDCDriver.h:50:28:virtual DriverType BLDCDriver::type()	1
 ../Core/Src/drivers/../common/base_classes/FOCDriver.h:24:7:FOCDriver::FOCDriver()	1
-../Core/Src/drivers/../common/base_classes/BLDCDriver.h:7:7:BLDCDriver::BLDCDriver()	1
+../Core/Src/drivers/../common/base_classes/BLDCDriver.h:9:7:BLDCDriver::BLDCDriver()	1
 ../Core/Src/drivers/BLDCDriver6PWM.cpp:3:1:BLDCDriver6PWM::BLDCDriver6PWM(int, int, int, int, int, int, int)	1
 ../Core/Src/drivers/BLDCDriver6PWM.cpp:26:7:virtual void BLDCDriver6PWM::enable()	1
 ../Core/Src/drivers/BLDCDriver6PWM.cpp:38:6:virtual void BLDCDriver6PWM::disable()	1

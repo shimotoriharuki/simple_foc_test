@@ -1,34 +1,44 @@
 #include "BLDCDriver3PWM.h"
 #include "main.h"
 
-BLDCDriver3PWM::BLDCDriver3PWM(int phA, int phB, int phC, int en1, int en2, int en3){
+BLDCDriver3PWM::BLDCDriver3PWM(int phA, int phB, int phC, GPIOPin *en1, GPIOPin *en2, GPIOPin *en3){
   // Pin initialization
-  pwmA = phA;
-  pwmB = phB;
-  pwmC = phC;
 
-  // enable_pin pin
-  enableA_pin = en1;
-  enableB_pin = en2;
-  enableC_pin = en3;
+	en1_ = en1;
+	en2_ = en2;
+	en3_ = en3;
+	/*
+	enable_a_port = GPIOA;
+	enable_b_port = GPIOA;
+	enable_c_port = GPIOA;
 
-  // default power-supply value
-  voltage_power_supply = DEF_POWER_SUPPLY;
-  voltage_limit = NOT_SET;
-  pwm_frequency = NOT_SET;
+	enable_a_channel = GPIO_PIN_11;
+	*/
+
+	/*
+	pwmA = phA;
+	pwmB = phB;
+	pwmC = phC;
+
+	// enable_pin pin
+	enableA_pin = en1;
+	enableB_pin = en2;
+	enableC_pin = en3;
+	 */
+	// default power-supply value
+	voltage_power_supply = DEF_POWER_SUPPLY;
+	voltage_limit = NOT_SET;
+	pwm_frequency = NOT_SET;
 
 }
 
 // enable motor driver
 void  BLDCDriver3PWM::enable(){
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_SET);
 
     // enable_pin the driver - if enable_pin pin available
-	/*
-    if ( _isset(enableA_pin) ) digitalWrite(enableA_pin, enable_active_high);
-    if ( _isset(enableB_pin) ) digitalWrite(enableB_pin, enable_active_high);
-    if ( _isset(enableC_pin) ) digitalWrite(enableC_pin, enable_active_high);
-    */
+    if ( en1_ != NULL ) HAL_GPIO_WritePin(en1_->port, en1_->channel, GPIO_PIN_SET);
+    if ( en2_ != NULL ) HAL_GPIO_WritePin(en2_->port, en2_->channel, GPIO_PIN_SET);
+    if ( en3_ != NULL ) HAL_GPIO_WritePin(en3_->port, en3_->channel, GPIO_PIN_SET);
     // set zero to PWM
     setPwm(0,0,0);
 }

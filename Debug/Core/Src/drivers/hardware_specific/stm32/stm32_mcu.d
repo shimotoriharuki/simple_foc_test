@@ -2,8 +2,6 @@ Core/Src/drivers/hardware_specific/stm32/stm32_mcu.o: \
  ../Core/Src/drivers/hardware_specific/stm32/stm32_mcu.cpp \
  ../Core/Src/drivers/hardware_specific/stm32/../../hardware_api.h \
  ../Core/Src/drivers/hardware_specific/stm32/../../../common/foc_utils.h \
- ../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/BLDCDriver.h \
- ../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/FOCDriver.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h \
  ../Core/Inc/stm32f3xx_hal_conf.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h \
@@ -33,11 +31,12 @@ Core/Src/drivers/hardware_specific/stm32/stm32_mcu.o: \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
+ ../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/BLDCDriver.h \
+ ../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/FOCDriver.h \
+ ../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/../foc_utils.h \
  ../Core/Src/drivers/hardware_specific/stm32/stm32_mcu.h
 ../Core/Src/drivers/hardware_specific/stm32/../../hardware_api.h:
 ../Core/Src/drivers/hardware_specific/stm32/../../../common/foc_utils.h:
-../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/BLDCDriver.h:
-../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/FOCDriver.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 ../Core/Inc/stm32f3xx_hal_conf.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h:
@@ -67,4 +66,7 @@ Core/Src/drivers/hardware_specific/stm32/stm32_mcu.o: \
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
+../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/BLDCDriver.h:
+../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/FOCDriver.h:
+../Core/Src/drivers/hardware_specific/stm32/../../../common/base_classes/../foc_utils.h:
 ../Core/Src/drivers/hardware_specific/stm32/stm32_mcu.h:

@@ -11,10 +11,15 @@
 //BLDCMotor motor(8, 6.9, 492);
 BLDCMotor motor(8);
 // BLDCDriver3PWM driver = BLDCDriver3PWM(11, 10, 9, 8); // mini v1.0
-BLDCDriver3PWM driver(9, 10, 11, 12); // mini v1.1
+GPIOPin enable_1 = {.port = GPIOA, .channel = GPIO_PIN_11};
+GPIOPin *p_enable_1 = &enable_1;
+
+
+BLDCDriver3PWM driver(9, 10, 11, p_enable_1); // mini v1.1
 
 // encoder instance
 Encoder encoder(2, 3, 75);
+static float target_angle;
 
 static bool motor_processing_flag = false;
 float mon_angle = 0;
@@ -100,10 +105,20 @@ void cppLoop() {
 	//motor.loopFOC();
 
 	motor_processing_flag = true;
-	HAL_Delay(6000);
+
+	for(uint8_t i = 0; i < 10; i++){
+		target_angle = 6.28;
+		HAL_Delay(1000);
+		target_angle = 0;
+		HAL_Delay(1000);
+		target_angle = -6.28;
+		HAL_Delay(1000);
+		target_angle = 0;
+		HAL_Delay(1000);
+	}
+
 	motor.disable();
 	while(1){}
-
 	// Motion control function
 	// velocity, position or voltage (defined in motor.controller)
 	// this function can be run at much lower frequency than loopFOC() function
@@ -118,16 +133,14 @@ void cppLoop() {
 }
 
 void cppTimerInterrupt1ms() {
-	static float angle = 0;
 
-	motor.absoluteZeroSearchInterruptHandler();
+	//motor.absoluteZeroSearchInterruptHandler();
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(6.28);
+		motor.move(target_angle);
 
-		angle += 3.14/5000;
-		mon_angle = angle;
+		mon_angle = target_angle;
 
 	}
 

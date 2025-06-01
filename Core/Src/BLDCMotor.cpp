@@ -225,9 +225,13 @@ int BLDCMotor::alignSensor() {
   //SIMPLEFOC_DEBUG("MOT: Align sensor.");
 
   // check if sensor needs zero search
-  if(sensor->needsSearch()) exit_flag = absoluteZeroSearch();
+  if(sensor->needsSearch()){
+	  exit_flag = absoluteZeroSearch();
+  }
   // stop init if not found index
-  if(!exit_flag) return exit_flag;
+  if(!exit_flag){
+	  return exit_flag;
+  }
 
   // v2.3.3 fix for R_AVR_7_PCREL against symbol" bug for AVR boards
   // TODO figure out why this works

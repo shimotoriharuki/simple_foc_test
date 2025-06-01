@@ -22,7 +22,7 @@ class BLDCDriver3PWM: public BLDCDriver
       @param en2 enable pin (optional input)
       @param en3 enable pin (optional input)
     */
-    BLDCDriver3PWM(int phA,int phB,int phC, int en1 = NOT_SET, int en2 = NOT_SET, int en3 = NOT_SET);
+    BLDCDriver3PWM(int phA,int phB,int phC, GPIOPin *en1 = NULL, GPIOPin *en2 = NULL, GPIOPin *en3 = NULL);
     
     /**  Motor hardware init function */
   	int init() override;
@@ -38,6 +38,10 @@ class BLDCDriver3PWM: public BLDCDriver
     int enableA_pin; //!< enable pin number
     int enableB_pin; //!< enable pin number
     int enableC_pin; //!< enable pin number
+
+    GPIOPin *en1_;
+    GPIOPin *en2_;
+    GPIOPin *en3_;
 
     /** 
      * Set phase voltages to the hardware 

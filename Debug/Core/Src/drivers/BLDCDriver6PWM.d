@@ -31,6 +31,7 @@ Core/Src/drivers/BLDCDriver6PWM.o: ../Core/Src/drivers/BLDCDriver6PWM.cpp \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
+ ../Core/Src/drivers/../common/base_classes/../foc_utils.h \
  ../Core/Src/drivers/../common/foc_utils.h \
  ../Core/Src/drivers/../common/defaults.h \
  ../Core/Src/drivers/hardware_api.h
@@ -66,6 +67,7 @@ Core/Src/drivers/BLDCDriver6PWM.o: ../Core/Src/drivers/BLDCDriver6PWM.cpp \
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h:
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
+../Core/Src/drivers/../common/base_classes/../foc_utils.h:
 ../Core/Src/drivers/../common/foc_utils.h:
 ../Core/Src/drivers/../common/defaults.h:
 ../Core/Src/drivers/hardware_api.h:

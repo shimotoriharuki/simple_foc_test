@@ -3,6 +3,8 @@
 
 //#include "Arduino.h"
 #include "FOCDriver.h"
+#include "stm32f3xx_hal.h"
+#include "../foc_utils.h"
 
 class BLDCDriver: public FOCDriver{
     public:
@@ -10,6 +12,21 @@ class BLDCDriver: public FOCDriver{
         float dc_a; //!< currently set duty cycle on phaseA
         float dc_b; //!< currently set duty cycle on phaseB
         float dc_c; //!< currently set duty cycle on phaseC
+
+        GPIOPin enable_1;
+        GPIOPin enable_2;
+        GPIOPin enable_3;
+
+        /*
+        GPIO_TypeDef *enable_a_port;
+        GPIO_TypeDef *enable_b_port;
+        GPIO_TypeDef *enable_c_port;
+
+        uint16_t enable_a_channel;
+        uint16_t enable_b_channel;
+        uint16_t enable_c_channel;
+
+*/
 
         /**
          * Set phase voltages to the hardware
