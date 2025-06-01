@@ -14,6 +14,10 @@ BLDCDriver3PWM driver(9, 10, 11, 12); // mini v1.1
 
 // encoder instance
 Encoder encoder(2, 3, 300);
+
+static bool motor_processing_flag = false;
+float mon_angle = 0;
+
 // Interrupt routine intialisation
 // channel A and B callbacks
 /*
@@ -29,6 +33,7 @@ void doMotor(char *cmd) {
 }
 
 void cppInit() {
+	HAL_TIM_Base_Start_IT(&htim6);
 	// if SimpleFOCMini is stacked in arduino headers
 	// on pins 12,11,10,9,8
 	// pin 12 is used as ground
@@ -52,7 +57,7 @@ void cppInit() {
 	motor.voltage_sensor_align = 3;
 
 	// set motion control loop to be used
-	motor.controller = MotionControlType::angle;
+	motor.controller = MotionControlType::angle_openloop;
 
 	// contoller configuration
 	// default parameters in defaults.h
@@ -62,7 +67,7 @@ void cppInit() {
 	motor.PID_velocity.I = 20;
 	motor.PID_velocity.D = 0;
 	// default voltage_power_supply
-	motor.voltage_limit = 6;
+	motor.voltage_limit = 5;
 	// jerk control using voltage voltage ramp
 	// default value is 300 volts per sec  ~ 0.3V per millisecond
 	motor.PID_velocity.output_ramp = 1000;
@@ -71,7 +76,7 @@ void cppInit() {
 	motor.LPF_velocity.Tf = 0.01f;
 
 	// angle P controller
-	motor.P_angle.P = 20;
+	motor.P_angle.P = 10;
 	//  maximal velocity of the position control
 	motor.velocity_limit = 4;
 
@@ -88,13 +93,18 @@ void cppLoop() {
 	// the faster you run this function the better
 	// Arduino UNO loop  ~1kHz
 	// Bluepill loop ~10kHz
-	motor.loopFOC();
+	//motor.loopFOC();
+
+	motor_processing_flag = true;
+	HAL_Delay(5000);
+	motor.disable();
+	while(1){}
 
 	// Motion control function
 	// velocity, position or voltage (defined in motor.controller)
 	// this function can be run at much lower frequency than loopFOC() function
 	// You can also use motor.move() and set the motor.target in the code
-	motor.move(1);
+	//motor.move(1);
 
 	// function intended to be used with serial plotter to monitor motor variables
 	// significantly slowing the execution down!!!!
@@ -104,6 +114,17 @@ void cppLoop() {
 }
 
 void cppTimerInterrupt1ms() {
+	static float angle = 0;
+
 	motor.absoluteZeroSearchInterruptHandler();
+
+	if(motor_processing_flag == true){
+		motor.loopFOC();
+		motor.move(10);
+
+		angle += 3.14/5000;
+		mon_angle = angle;
+
+	}
 
 }
