@@ -8,12 +8,12 @@
 #include "SimpleFOC.h"
 
 // BLDC motor & driver instance
-BLDCMotor motor(8);
+BLDCMotor motor(2, 6.9, 492);
 // BLDCDriver3PWM driver = BLDCDriver3PWM(11, 10, 9, 8); // mini v1.0
 BLDCDriver3PWM driver(9, 10, 11, 12); // mini v1.1
 
 // encoder instance
-Encoder encoder(2, 3, 300);
+Encoder encoder(2, 3, 75);
 
 static bool motor_processing_flag = false;
 float mon_angle = 0;
@@ -57,21 +57,22 @@ void cppInit() {
 	motor.voltage_sensor_align = 3;
 
 	// set motion control loop to be used
-	motor.controller = MotionControlType::angle_openloop;
+	//motor.controller = MotionControlType::angle_openloop;
 	//motor.controller = MotionControlType::velocity_openloop;
+	motor.controller = MotionControlType::velocity;
 
 	// contoller configuration
 	// default parameters in defaults.h
 
 	// velocity PI controller parameters
-	motor.PID_velocity.P = 0.2f;
-	motor.PID_velocity.I = 20;
+	motor.PID_velocity.P = 0.10f;
+	motor.PID_velocity.I = 0.0f;
 	motor.PID_velocity.D = 0;
 	// default voltage_power_supply
-	motor.voltage_limit = 5;
+	motor.voltage_limit = 3;
 	// jerk control using voltage voltage ramp
 	// default value is 300 volts per sec  ~ 0.3V per millisecond
-	motor.PID_velocity.output_ramp = 1000;
+	motor.PID_velocity.output_ramp = 300;
 
 	// velocity low pass filtering time constant
 	motor.LPF_velocity.Tf = 0.01f;
@@ -79,7 +80,7 @@ void cppInit() {
 	// angle P controller
 	motor.P_angle.P = 10;
 	//  maximal velocity of the position control
-	motor.velocity_limit = 10;
+	motor.velocity_limit = 3;
 
 	// initialize motor
 	motor.init();
@@ -97,7 +98,7 @@ void cppLoop() {
 	//motor.loopFOC();
 
 	motor_processing_flag = true;
-	HAL_Delay(5000);
+	HAL_Delay(2000);
 	motor.disable();
 	while(1){}
 
@@ -121,7 +122,7 @@ void cppTimerInterrupt1ms() {
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(3.14);
+		motor.move(100);
 
 		angle += 3.14/5000;
 		mon_angle = angle;

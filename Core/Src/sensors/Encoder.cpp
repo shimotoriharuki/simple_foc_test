@@ -144,21 +144,22 @@ float Encoder::getSensorAngle(){
   function using mixed time and frequency measurement technique
 */
 float Encoder::getVelocity(){
-	/*
   // Copy volatile variables in minimal-duration blocking section to ensure no interrupts are missed
-  noInterrupts();
+  //noInterrupts();
   long copy_pulse_counter = pulse_counter;
-  long copy_pulse_timestamp = pulse_timestamp;
-  interrupts();
+  //long copy_pulse_timestamp = pulse_timestamp;
+  //interrupts();
   // timestamp
-  long timestamp_us = _micros();
+  //long timestamp_us = _micros();
   // sampling time calculation
-  float Ts = (timestamp_us - prev_timestamp_us) * 1e-6f;
+  //float Ts = (timestamp_us - prev_timestamp_us) * 1e-6f;
+  float Ts = 1e-3f;
   // quick fix for strange cases (micros overflow)
   if(Ts <= 0 || Ts > 0.5f) Ts = 1e-3f;
 
   // time from last impulse
-  float Th = (timestamp_us - copy_pulse_timestamp) * 1e-6f;
+  //float Th = (timestamp_us - copy_pulse_timestamp) * 1e-6f;
+  float Th = 1e-3f;
   long dN = copy_pulse_counter - prev_pulse_counter;
 
   // Pulse per second calculation (Eq.3.)
@@ -177,13 +178,11 @@ float Encoder::getVelocity(){
   float velocity = pulse_per_second / ((float)cpr) * (_2PI);
 
   // save variables for next pass
-  prev_timestamp_us = timestamp_us;
+  //prev_timestamp_us = timestamp_us;
   // save velocity calculation variables
   prev_Th = Th;
   prev_pulse_counter = copy_pulse_counter;
   return velocity;
-  */
-	return 0;
 }
 
 // getter for index pin
@@ -203,6 +202,17 @@ int Encoder::hasIndex(){
 void Encoder::init(){
 	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
 
+	pulse_counter = 0;
+	//pulse_timestamp = _micros();
+	// velocity calculation variables
+	prev_Th = 0;
+	pulse_per_second = 0;
+	prev_pulse_counter = 0;
+	//prev_timestamp_us = _micros();
+
+	// initial cpr = PPR
+	// change it if the mode is quadrature
+	if(quadrature == Quadrature::ON) cpr = 4*cpr;
 	/*
 
   // Encoder - check if pullup needed for your encoder

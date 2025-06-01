@@ -5,8 +5,8 @@
 ../Core/Src/sensors/Encoder.cpp:91:6:void Encoder::handleIndex()	1
 ../Core/Src/sensors/Encoder.cpp:111:6:virtual void Encoder::update()	1
 ../Core/Src/sensors/Encoder.cpp:136:7:virtual float Encoder::getSensorAngle()	1
-../Core/Src/sensors/Encoder.cpp:146:7:virtual float Encoder::getVelocity()	1
-../Core/Src/sensors/Encoder.cpp:191:5:virtual int Encoder::needsSearch()	3
-../Core/Src/sensors/Encoder.cpp:196:5:int Encoder::hasIndex()	1
-../Core/Src/sensors/Encoder.cpp:203:6:virtual void Encoder::init()	1
-../Core/Src/sensors/Encoder.cpp:239:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	1
+../Core/Src/sensors/Encoder.cpp:146:7:virtual float Encoder::getVelocity()	6
+../Core/Src/sensors/Encoder.cpp:190:5:virtual int Encoder::needsSearch()	3
+../Core/Src/sensors/Encoder.cpp:195:5:int Encoder::hasIndex()	1
+../Core/Src/sensors/Encoder.cpp:202:6:virtual void Encoder::init()	2
+../Core/Src/sensors/Encoder.cpp:249:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	1
