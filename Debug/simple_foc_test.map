@@ -4707,129 +4707,128 @@ LOAD /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .text.cppLoop  0x0800255c       0x24 ./Core/Src/cppMain.o
                 0x0800255c                cppLoop
  .text.cppTimerInterrupt1ms
-                0x08002580       0x70 ./Core/Src/cppMain.o
+                0x08002580       0x74 ./Core/Src/cppMain.o
                 0x08002580                cppTimerInterrupt1ms
  .text._Z41__static_initialization_and_destruction_0v
-                0x080025f0       0x60 ./Core/Src/cppMain.o
+                0x080025f4       0x60 ./Core/Src/cppMain.o
  .text._GLOBAL__sub_I_motor
-                0x08002650        0xa ./Core/Src/cppMain.o
- *fill*         0x0800265a        0x2 
+                0x08002654        0xa ./Core/Src/cppMain.o
+ *fill*         0x0800265e        0x2 
  .text.HAL_TIM_PeriodElapsedCallback
-                0x0800265c       0x38 ./Core/Src/main.o
-                0x0800265c                HAL_TIM_PeriodElapsedCallback
- .text.main     0x08002694       0x2a ./Core/Src/main.o
-                0x08002694                main
+                0x08002660       0x38 ./Core/Src/main.o
+                0x08002660                HAL_TIM_PeriodElapsedCallback
+ .text.main     0x08002698       0x2a ./Core/Src/main.o
+                0x08002698                main
  .text.SystemClock_Config
-                0x080026be       0xa8 ./Core/Src/main.o
-                0x080026be                SystemClock_Config
- *fill*         0x08002766        0x2 
+                0x080026c2       0xa8 ./Core/Src/main.o
+                0x080026c2                SystemClock_Config
+ *fill*         0x0800276a        0x2 
  .text.MX_TIM1_Init
-                0x08002768      0x14c ./Core/Src/main.o
+                0x0800276c      0x14c ./Core/Src/main.o
  .text.MX_TIM2_Init
-                0x080028b4       0xa8 ./Core/Src/main.o
+                0x080028b8       0xa8 ./Core/Src/main.o
  .text.MX_TIM6_Init
-                0x0800295c       0x6c ./Core/Src/main.o
+                0x08002960       0x6c ./Core/Src/main.o
  .text.MX_USART2_UART_Init
-                0x080029c8       0x60 ./Core/Src/main.o
+                0x080029cc       0x60 ./Core/Src/main.o
  .text.MX_GPIO_Init
-                0x08002a28       0x80 ./Core/Src/main.o
+                0x08002a2c       0x80 ./Core/Src/main.o
  .text.Error_Handler
-                0x08002aa8        0xc ./Core/Src/main.o
-                0x08002aa8                Error_Handler
+                0x08002aac        0xc ./Core/Src/main.o
+                0x08002aac                Error_Handler
  .text.HAL_MspInit
-                0x08002ab4       0x48 ./Core/Src/stm32f3xx_hal_msp.o
-                0x08002ab4                HAL_MspInit
+                0x08002ab8       0x48 ./Core/Src/stm32f3xx_hal_msp.o
+                0x08002ab8                HAL_MspInit
  .text.HAL_TIM_PWM_MspInit
-                0x08002afc       0x40 ./Core/Src/stm32f3xx_hal_msp.o
-                0x08002afc                HAL_TIM_PWM_MspInit
+                0x08002b00       0x40 ./Core/Src/stm32f3xx_hal_msp.o
+                0x08002b00                HAL_TIM_PWM_MspInit
  .text.HAL_TIM_Encoder_MspInit
-                0x08002b3c       0x80 ./Core/Src/stm32f3xx_hal_msp.o
-                0x08002b3c                HAL_TIM_Encoder_MspInit
+                0x08002b40       0x80 ./Core/Src/stm32f3xx_hal_msp.o
+                0x08002b40                HAL_TIM_Encoder_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x08002bbc       0x4c ./Core/Src/stm32f3xx_hal_msp.o
-                0x08002bbc                HAL_TIM_Base_MspInit
+                0x08002bc0       0x4c ./Core/Src/stm32f3xx_hal_msp.o
+                0x08002bc0                HAL_TIM_Base_MspInit
  .text.HAL_TIM_MspPostInit
-                0x08002c08       0x70 ./Core/Src/stm32f3xx_hal_msp.o
-                0x08002c08                HAL_TIM_MspPostInit
+                0x08002c0c       0x70 ./Core/Src/stm32f3xx_hal_msp.o
+                0x08002c0c                HAL_TIM_MspPostInit
  .text.HAL_UART_MspInit
-                0x08002c78       0x88 ./Core/Src/stm32f3xx_hal_msp.o
-                0x08002c78                HAL_UART_MspInit
+                0x08002c7c       0x88 ./Core/Src/stm32f3xx_hal_msp.o
+                0x08002c7c                HAL_UART_MspInit
  .text.NMI_Handler
-                0x08002d00        0x8 ./Core/Src/stm32f3xx_it.o
-                0x08002d00                NMI_Handler
+                0x08002d04        0x8 ./Core/Src/stm32f3xx_it.o
+                0x08002d04                NMI_Handler
  .text.HardFault_Handler
-                0x08002d08        0x8 ./Core/Src/stm32f3xx_it.o
-                0x08002d08                HardFault_Handler
+                0x08002d0c        0x8 ./Core/Src/stm32f3xx_it.o
+                0x08002d0c                HardFault_Handler
  .text.MemManage_Handler
-                0x08002d10        0x8 ./Core/Src/stm32f3xx_it.o
-                0x08002d10                MemManage_Handler
+                0x08002d14        0x8 ./Core/Src/stm32f3xx_it.o
+                0x08002d14                MemManage_Handler
  .text.BusFault_Handler
-                0x08002d18        0x8 ./Core/Src/stm32f3xx_it.o
-                0x08002d18                BusFault_Handler
+                0x08002d1c        0x8 ./Core/Src/stm32f3xx_it.o
+                0x08002d1c                BusFault_Handler
  .text.UsageFault_Handler
-                0x08002d20        0x8 ./Core/Src/stm32f3xx_it.o
-                0x08002d20                UsageFault_Handler
+                0x08002d24        0x8 ./Core/Src/stm32f3xx_it.o
+                0x08002d24                UsageFault_Handler
  .text.SVC_Handler
-                0x08002d28        0xe ./Core/Src/stm32f3xx_it.o
-                0x08002d28                SVC_Handler
+                0x08002d2c        0xe ./Core/Src/stm32f3xx_it.o
+                0x08002d2c                SVC_Handler
  .text.DebugMon_Handler
-                0x08002d36        0xe ./Core/Src/stm32f3xx_it.o
-                0x08002d36                DebugMon_Handler
+                0x08002d3a        0xe ./Core/Src/stm32f3xx_it.o
+                0x08002d3a                DebugMon_Handler
  .text.PendSV_Handler
-                0x08002d44        0xe ./Core/Src/stm32f3xx_it.o
-                0x08002d44                PendSV_Handler
+                0x08002d48        0xe ./Core/Src/stm32f3xx_it.o
+                0x08002d48                PendSV_Handler
  .text.SysTick_Handler
-                0x08002d52        0xc ./Core/Src/stm32f3xx_it.o
-                0x08002d52                SysTick_Handler
- *fill*         0x08002d5e        0x2 
+                0x08002d56        0xc ./Core/Src/stm32f3xx_it.o
+                0x08002d56                SysTick_Handler
+ *fill*         0x08002d62        0x2 
  .text.TIM6_DAC1_IRQHandler
-                0x08002d60       0x14 ./Core/Src/stm32f3xx_it.o
-                0x08002d60                TIM6_DAC1_IRQHandler
- .text._getpid  0x08002d74       0x10 ./Core/Src/syscalls.o
-                0x08002d74                _getpid
- .text._kill    0x08002d84       0x20 ./Core/Src/syscalls.o
-                0x08002d84                _kill
- .text._exit    0x08002da4       0x16 ./Core/Src/syscalls.o
-                0x08002da4                _exit
- *fill*         0x08002dba        0x2 
- .text._sbrk    0x08002dbc       0x6c ./Core/Src/sysmem.o
-                0x08002dbc                _sbrk
+                0x08002d64       0x14 ./Core/Src/stm32f3xx_it.o
+                0x08002d64                TIM6_DAC1_IRQHandler
+ .text._getpid  0x08002d78       0x10 ./Core/Src/syscalls.o
+                0x08002d78                _getpid
+ .text._kill    0x08002d88       0x20 ./Core/Src/syscalls.o
+                0x08002d88                _kill
+ .text._exit    0x08002da8       0x16 ./Core/Src/syscalls.o
+                0x08002da8                _exit
+ *fill*         0x08002dbe        0x2 
+ .text._sbrk    0x08002dc0       0x6c ./Core/Src/sysmem.o
+                0x08002dc0                _sbrk
  .text.SystemInit
-                0x08002e28       0x24 ./Core/Src/system_stm32f3xx.o
-                0x08002e28                SystemInit
+                0x08002e2c       0x24 ./Core/Src/system_stm32f3xx.o
+                0x08002e2c                SystemInit
  .text._ZN8FOCMotorC2Ev
-                0x08002e4c      0x1fc ./Core/Src/common/base_classes/FOCMotor.o
-                0x08002e4c                FOCMotor::FOCMotor()
-                0x08002e4c                FOCMotor::FOCMotor()
+                0x08002e50      0x1fc ./Core/Src/common/base_classes/FOCMotor.o
+                0x08002e50                FOCMotor::FOCMotor()
+                0x08002e50                FOCMotor::FOCMotor()
  .text._ZN8FOCMotor10linkSensorEP6Sensor
-                0x08003048       0x1e ./Core/Src/common/base_classes/FOCMotor.o
-                0x08003048                FOCMotor::linkSensor(Sensor*)
+                0x0800304c       0x1e ./Core/Src/common/base_classes/FOCMotor.o
+                0x0800304c                FOCMotor::linkSensor(Sensor*)
  .text._ZN8FOCMotor10shaftAngleEv
-                0x08003066       0x76 ./Core/Src/common/base_classes/FOCMotor.o
-                0x08003066                FOCMotor::shaftAngle()
+                0x0800306a       0x76 ./Core/Src/common/base_classes/FOCMotor.o
+                0x0800306a                FOCMotor::shaftAngle()
  .text._ZN8FOCMotor13shaftVelocityEv
-                0x080030dc       0x6c ./Core/Src/common/base_classes/FOCMotor.o
-                0x080030dc                FOCMotor::shaftVelocity()
+                0x080030e0       0x6c ./Core/Src/common/base_classes/FOCMotor.o
+                0x080030e0                FOCMotor::shaftVelocity()
  .text._ZN8FOCMotor15electricalAngleEv
-                0x08003148       0x78 ./Core/Src/common/base_classes/FOCMotor.o
-                0x08003148                FOCMotor::electricalAngle()
+                0x0800314c       0x78 ./Core/Src/common/base_classes/FOCMotor.o
+                0x0800314c                FOCMotor::electricalAngle()
  .text._ZN6Sensor6updateEv
-                0x080031c0       0x90 ./Core/Src/common/base_classes/Sensor.o
-                0x080031c0                Sensor::update()
+                0x080031c4       0x90 ./Core/Src/common/base_classes/Sensor.o
+                0x080031c4                Sensor::update()
  .text._ZN6Sensor11getVelocityEv
-                0x08003250       0xc4 ./Core/Src/common/base_classes/Sensor.o
-                0x08003250                Sensor::getVelocity()
+                0x08003254       0xc4 ./Core/Src/common/base_classes/Sensor.o
+                0x08003254                Sensor::getVelocity()
  .text._ZN6Sensor4initEv
-                0x08003314       0x60 ./Core/Src/common/base_classes/Sensor.o
-                0x08003314                Sensor::init()
+                0x08003318       0x60 ./Core/Src/common/base_classes/Sensor.o
+                0x08003318                Sensor::init()
  .text._ZN6Sensor18getMechanicalAngleEv
-                0x08003374       0x1e ./Core/Src/common/base_classes/Sensor.o
-                0x08003374                Sensor::getMechanicalAngle()
- *fill*         0x08003392        0x2 
+                0x08003378       0x1e ./Core/Src/common/base_classes/Sensor.o
+                0x08003378                Sensor::getMechanicalAngle()
+ *fill*         0x08003396        0x2 
  .text._ZN6Sensor8getAngleEv
-                0x08003394       0x38 ./Core/Src/common/base_classes/Sensor.o
-                0x08003394                Sensor::getAngle()
- *fill*         0x080033cc        0x4 
+                0x08003398       0x38 ./Core/Src/common/base_classes/Sensor.o
+                0x08003398                Sensor::getAngle()
  .text._ZN6Sensor15getPreciseAngleEv
                 0x080033d0       0x58 ./Core/Src/common/base_classes/Sensor.o
                 0x080033d0                Sensor::getPreciseAngle()

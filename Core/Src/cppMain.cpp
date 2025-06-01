@@ -123,7 +123,7 @@ void cppTimerInterrupt1ms() {
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(10);
+		motor.move(100);
 
 		angle += 3.14/5000;
 		mon_angle = angle;
