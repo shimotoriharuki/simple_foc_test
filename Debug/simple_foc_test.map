@@ -4637,10 +4637,11 @@ LOAD /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .text._ZSt3maxIfERKT_S2_S2_
                 0x08002476       0x32 ./Core/Src/BLDCMotor.o
                 0x08002476                float const& std::max<float>(float const&, float const&)
- .text.cppInit  0x080024a8       0xc4 ./Core/Src/cppMain.o
+ .text.cppInit  0x080024a8       0xc0 ./Core/Src/cppMain.o
                 0x080024a8                cppInit
- .text.cppLoop  0x0800256c       0x24 ./Core/Src/cppMain.o
-                0x0800256c                cppLoop
+ .text.cppLoop  0x08002568       0x24 ./Core/Src/cppMain.o
+                0x08002568                cppLoop
+ *fill*         0x0800258c        0x4 
  .text.cppTimerInterrupt1ms
                 0x08002590       0x74 ./Core/Src/cppMain.o
                 0x08002590                cppTimerInterrupt1ms

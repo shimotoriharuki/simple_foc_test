@@ -8,7 +8,7 @@
 #include "SimpleFOC.h"
 
 // BLDC motor & driver instance
-BLDCMotor motor(2);
+BLDCMotor motor(8);
 // BLDCDriver3PWM driver = BLDCDriver3PWM(11, 10, 9, 8); // mini v1.0
 BLDCDriver3PWM driver(9, 10, 11, 12); // mini v1.1
 
@@ -48,7 +48,7 @@ void cppInit() {
 
 	// driver config
 	// power supply voltage [V]
-	driver.voltage_power_supply = 12;
+	driver.voltage_power_supply = 8;
 	driver.init();
 	// link the motor and the driver
 	motor.linkDriver(&driver);
@@ -57,8 +57,8 @@ void cppInit() {
 	motor.voltage_sensor_align = 3;
 
 	// set motion control loop to be used
-	//motor.controller = MotionControlType::angle_openloop;
-	motor.controller = MotionControlType::velocity_openloop;
+	motor.controller = MotionControlType::angle_openloop;
+	//motor.controller = MotionControlType::velocity_openloop;
 
 	// contoller configuration
 	// default parameters in defaults.h
@@ -79,7 +79,7 @@ void cppInit() {
 	// angle P controller
 	motor.P_angle.P = 10;
 	//  maximal velocity of the position control
-	motor.velocity_limit = 4;
+	motor.velocity_limit = 10;
 
 	// initialize motor
 	motor.init();
@@ -121,7 +121,7 @@ void cppTimerInterrupt1ms() {
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(100);
+		motor.move(3.14);
 
 		angle += 3.14/5000;
 		mon_angle = angle;
