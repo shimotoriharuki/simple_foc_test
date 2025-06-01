@@ -66,11 +66,11 @@ void cppInit() {
 	// default parameters in defaults.h
 
 	// velocity PI controller parameters
-	motor.PID_velocity.P = 0.010f;
+	motor.PID_velocity.P = 0.005f;
 	motor.PID_velocity.I = 1.0f;
 	motor.PID_velocity.D = 0;
 	// default voltage_power_supply
-	motor.voltage_limit = 3;
+	motor.voltage_limit = 8;
 	// jerk control using voltage voltage ramp
 	// default value is 300 volts per sec  ~ 0.3V per millisecond
 	motor.PID_velocity.output_ramp = 300;
@@ -123,7 +123,7 @@ void cppTimerInterrupt1ms() {
 
 	if(motor_processing_flag == true){
 		motor.loopFOC();
-		motor.move(100);
+		motor.move(2000);
 
 		angle += 3.14/5000;
 		mon_angle = angle;
