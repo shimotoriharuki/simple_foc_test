@@ -1,9 +1,9 @@
 #include "BLDCDriver3PWM.h"
 #include "main.h"
 
-void* _configure3PWM(long pwm_frequency, const PWMPin *pinA, const PWMPin *pinB, const PWMPin *pinC) {
+void* _configure3PWM(long pwm_frequency, const TimerPin *pinA, const TimerPin *pinB, const TimerPin *pinC) {
   STM32HALDriverParams* params = new STM32HALDriverParams{
-    .pins = { (PWMPin*)pinA, (PWMPin*)pinB, (PWMPin*)pinC },
+    .pins = { (TimerPin*)pinA, (TimerPin*)pinB, (TimerPin*)pinC },
     .pwm_frequency = pwm_frequency
   };
   return params;
@@ -29,7 +29,7 @@ void _writeDutyCycle3PWM(float dc_a,  float dc_b, float dc_c, void* params){
   //analogWrite(((GenericDriverParams*)params)->pins[2], 255.0f*dc_c);
 }
 
-BLDCDriver3PWM::BLDCDriver3PWM(PWMPin *phA, PWMPin *phB, PWMPin *phC, GPIOPin *en1, GPIOPin *en2, GPIOPin *en3){
+BLDCDriver3PWM::BLDCDriver3PWM(TimerPin *phA, TimerPin *phB, TimerPin *phC, GPIOPin *en1, GPIOPin *en2, GPIOPin *en3){
   // Pin initialization
 
 	phA_ = phA;

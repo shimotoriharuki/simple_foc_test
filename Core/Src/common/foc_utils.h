@@ -71,7 +71,7 @@ struct GPIOPin{
 	uint16_t channel;
 };
 
-struct PWMPin{
+struct TimerPin{
 	TIM_HandleTypeDef *htim;
 	uint16_t channel;
 };

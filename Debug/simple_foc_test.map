@@ -5193,9 +5193,9 @@ LOAD /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .text._ZN10BLDCDriver4typeEv
                 0x080038b8       0x16 ./Core/Src/drivers/BLDCDriver3PWM.o
                 0x080038b8                BLDCDriver::type()
- .text._Z14_configure3PWMlPK6PWMPinS1_S1_
+ .text._Z14_configure3PWMlPK8TimerPinS1_S1_
                 0x080038ce       0x40 ./Core/Src/drivers/BLDCDriver3PWM.o
-                0x080038ce                _configure3PWM(long, PWMPin const*, PWMPin const*, PWMPin const*)
+                0x080038ce                _configure3PWM(long, TimerPin const*, TimerPin const*, TimerPin const*)
  *fill*         0x0800390e        0x2 
  .text._Z19_writeDutyCycle3PWMfffPv
                 0x08003910      0x2b4 ./Core/Src/drivers/BLDCDriver3PWM.o
@@ -5208,10 +5208,10 @@ LOAD /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
                 0x08003bf8       0x24 ./Core/Src/drivers/BLDCDriver3PWM.o
                 0x08003bf8                BLDCDriver::BLDCDriver()
                 0x08003bf8                BLDCDriver::BLDCDriver()
- .text._ZN14BLDCDriver3PWMC2EP6PWMPinS1_S1_P7GPIOPinS3_S3_
+ .text._ZN14BLDCDriver3PWMC2EP8TimerPinS1_S1_P7GPIOPinS3_S3_
                 0x08003c1c       0x6c ./Core/Src/drivers/BLDCDriver3PWM.o
-                0x08003c1c                BLDCDriver3PWM::BLDCDriver3PWM(PWMPin*, PWMPin*, PWMPin*, GPIOPin*, GPIOPin*, GPIOPin*)
-                0x08003c1c                BLDCDriver3PWM::BLDCDriver3PWM(PWMPin*, PWMPin*, PWMPin*, GPIOPin*, GPIOPin*, GPIOPin*)
+                0x08003c1c                BLDCDriver3PWM::BLDCDriver3PWM(TimerPin*, TimerPin*, TimerPin*, GPIOPin*, GPIOPin*, GPIOPin*)
+                0x08003c1c                BLDCDriver3PWM::BLDCDriver3PWM(TimerPin*, TimerPin*, TimerPin*, GPIOPin*, GPIOPin*, GPIOPin*)
  .text._ZN14BLDCDriver3PWM6enableEv
                 0x08003c88       0x80 ./Core/Src/drivers/BLDCDriver3PWM.o
                 0x08003c88                BLDCDriver3PWM::enable()
@@ -6194,32 +6194,32 @@ LOAD /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_line    0x00011926     0x191c ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
  .debug_line    0x00013242     0x2b47 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
 
-.debug_str      0x00000000    0xadec2
- .debug_str     0x00000000    0xadec2 ./Core/Src/BLDCMotor.o
+.debug_str      0x00000000    0xadecc
+ .debug_str     0x00000000    0xadecc ./Core/Src/BLDCMotor.o
                               0xa7406 (size before relaxing)
- .debug_str     0x000adec2    0xa0338 ./Core/Src/cppMain.o
- .debug_str     0x000adec2    0x9e5da ./Core/Src/main.o
- .debug_str     0x000adec2    0x9e3ec ./Core/Src/stm32f3xx_hal_msp.o
- .debug_str     0x000adec2    0x9dd5f ./Core/Src/stm32f3xx_it.o
- .debug_str     0x000adec2     0x99e5 ./Core/Src/syscalls.o
- .debug_str     0x000adec2     0x7783 ./Core/Src/sysmem.o
- .debug_str     0x000adec2    0x9d7dc ./Core/Src/system_stm32f3xx.o
- .debug_str     0x000adec2    0x9fd83 ./Core/Src/common/base_classes/FOCMotor.o
- .debug_str     0x000adec2    0xa5488 ./Core/Src/common/base_classes/Sensor.o
- .debug_str     0x000adec2    0xa5580 ./Core/Src/common/foc_utils.o
- .debug_str     0x000adec2    0x9ded6 ./Core/Src/common/lowpass_filter.o
- .debug_str     0x000adec2    0x9df4a ./Core/Src/common/pid.o
- .debug_str     0x000adec2    0x9ee7f ./Core/Src/drivers/BLDCDriver3PWM.o
- .debug_str     0x000adec2    0x9fe25 ./Core/Src/sensors/Encoder.o
- .debug_str     0x000adec2       0x85 ./Core/Startup/startup_stm32f303k8tx.o
- .debug_str     0x000adec2    0x9decc ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
- .debug_str     0x000adec2    0x9ddf1 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
- .debug_str     0x000adec2    0x9d9bb ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
- .debug_str     0x000adec2    0x9dc7c ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
- .debug_str     0x000adec2    0x9d97b ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
- .debug_str     0x000adec2    0x9ec13 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
- .debug_str     0x000adec2    0x9e459 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_str     0x000adec2    0x9e4ff ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+ .debug_str     0x000adecc    0xa033e ./Core/Src/cppMain.o
+ .debug_str     0x000adecc    0x9e5da ./Core/Src/main.o
+ .debug_str     0x000adecc    0x9e3ec ./Core/Src/stm32f3xx_hal_msp.o
+ .debug_str     0x000adecc    0x9dd5f ./Core/Src/stm32f3xx_it.o
+ .debug_str     0x000adecc     0x99e5 ./Core/Src/syscalls.o
+ .debug_str     0x000adecc     0x7783 ./Core/Src/sysmem.o
+ .debug_str     0x000adecc    0x9d7dc ./Core/Src/system_stm32f3xx.o
+ .debug_str     0x000adecc    0x9fd83 ./Core/Src/common/base_classes/FOCMotor.o
+ .debug_str     0x000adecc    0xa5488 ./Core/Src/common/base_classes/Sensor.o
+ .debug_str     0x000adecc    0xa5580 ./Core/Src/common/foc_utils.o
+ .debug_str     0x000adecc    0x9ded6 ./Core/Src/common/lowpass_filter.o
+ .debug_str     0x000adecc    0x9df4a ./Core/Src/common/pid.o
+ .debug_str     0x000adecc    0x9ee87 ./Core/Src/drivers/BLDCDriver3PWM.o
+ .debug_str     0x000adecc    0x9fe25 ./Core/Src/sensors/Encoder.o
+ .debug_str     0x000adecc       0x85 ./Core/Startup/startup_stm32f303k8tx.o
+ .debug_str     0x000adecc    0x9decc ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+ .debug_str     0x000adecc    0x9ddf1 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ .debug_str     0x000adecc    0x9d9bb ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+ .debug_str     0x000adecc    0x9dc7c ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+ .debug_str     0x000adecc    0x9d97b ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+ .debug_str     0x000adecc    0x9ec13 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .debug_str     0x000adecc    0x9e459 ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
+ .debug_str     0x000adecc    0x9e4ff ./Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/BLDCMotor.o

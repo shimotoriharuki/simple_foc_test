@@ -14,12 +14,12 @@ BLDCMotor motor(8);
 GPIOPin enable_1 = {.port = GPIOA, .channel = GPIO_PIN_11};
 GPIOPin *p_enable_1 = &enable_1;
 
-PWMPin phase_a = {.htim = &htim1, .channel = TIM_CHANNEL_1};
-PWMPin *p_phase_a= &phase_a;
-PWMPin phase_b = {.htim = &htim1, .channel = TIM_CHANNEL_2};
-PWMPin *p_phase_b= &phase_b;
-PWMPin phase_c = {.htim = &htim1, .channel = TIM_CHANNEL_3};
-PWMPin *p_phase_c= &phase_c;
+TimerPin phase_a = {.htim = &htim1, .channel = TIM_CHANNEL_1};
+TimerPin *p_phase_a= &phase_a;
+TimerPin phase_b = {.htim = &htim1, .channel = TIM_CHANNEL_2};
+TimerPin *p_phase_b= &phase_b;
+TimerPin phase_c = {.htim = &htim1, .channel = TIM_CHANNEL_3};
+TimerPin *p_phase_c= &phase_c;
 
 BLDCDriver3PWM driver(p_phase_a, p_phase_b, p_phase_c, p_enable_1); // mini v1.1
 

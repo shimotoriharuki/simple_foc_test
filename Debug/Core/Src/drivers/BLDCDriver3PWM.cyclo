@@ -1,9 +1,9 @@
 ../Core/Src/drivers/../common/base_classes/BLDCDriver.h:50:28:virtual DriverType BLDCDriver::type()	1
-../Core/Src/drivers/BLDCDriver3PWM.cpp:4:7:void* _configure3PWM(long int, const PWMPin*, const PWMPin*, const PWMPin*)	1
+../Core/Src/drivers/BLDCDriver3PWM.cpp:4:7:void* _configure3PWM(long int, const TimerPin*, const TimerPin*, const TimerPin*)	1
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:12:6:void _writeDutyCycle3PWM(float, float, float, void*)	19
 ../Core/Src/drivers/../common/base_classes/FOCDriver.h:24:7:FOCDriver::FOCDriver()	1
 ../Core/Src/drivers/../common/base_classes/BLDCDriver.h:9:7:BLDCDriver::BLDCDriver()	1
-../Core/Src/drivers/BLDCDriver3PWM.cpp:32:1:BLDCDriver3PWM::BLDCDriver3PWM(PWMPin*, PWMPin*, PWMPin*, GPIOPin*, GPIOPin*, GPIOPin*)	1
+../Core/Src/drivers/BLDCDriver3PWM.cpp:32:1:BLDCDriver3PWM::BLDCDriver3PWM(TimerPin*, TimerPin*, TimerPin*, GPIOPin*, GPIOPin*, GPIOPin*)	1
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:68:7:virtual void BLDCDriver3PWM::enable()	4
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:79:6:virtual void BLDCDriver3PWM::disable()	4
 ../Core/Src/drivers/BLDCDriver3PWM.cpp:92:5:virtual int BLDCDriver3PWM::init()	6
