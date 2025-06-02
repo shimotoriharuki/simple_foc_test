@@ -26,7 +26,7 @@ BLDCDriver3PWM driver(p_phase_a, p_phase_b, p_phase_c, p_enable_1); // mini v1.1
 // encoder instance
 TimerPin encoder_pin = {.htim = &htim2, .channel = TIM_CHANNEL_ALL};
 TimerPin *p_encoder_pin= &encoder_pin;
-Encoder encoder(p_encoder_pin, 75);
+Encoder encoder(p_encoder_pin, TIM2, 75);
 static float target_angle;
 
 static bool motor_processing_flag = false;
@@ -80,7 +80,7 @@ void cppInit() {
 	// default parameters in defaults.h
 
 	// velocity PI controller parameters
-	motor.PID_velocity.P = 0.005f;
+	motor.PID_velocity.P = 0.001f;
 	motor.PID_velocity.I = 1.0f;
 	motor.PID_velocity.D = 0;
 	// default voltage_power_supply

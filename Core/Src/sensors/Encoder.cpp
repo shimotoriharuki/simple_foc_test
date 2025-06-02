@@ -10,13 +10,14 @@
 
 uint32_t mon_encoder_cnt;
 
-Encoder::Encoder(TimerPin *pin , float _ppr, int _index){
+Encoder::Encoder(TimerPin *pin , TIM_TypeDef *tim, float _ppr, int _index){
 
   // Encoder measurement structure init
   // hardware pins
   //pinA = _encA;
   //pinB = _encB;
   pin_ = pin;
+  tim_ = tim;
 
   // counter setup
   pulse_counter = 0;
@@ -111,7 +112,7 @@ void Encoder::handleIndex() {
 
 // Sensor update function. Safely copy volatile interrupt variables into Sensor base class state variables.
 void Encoder::update() {
-	pulse_counter = TIM2->CNT;
+	pulse_counter = tim_->CNT;
 	mon_encoder_cnt = pulse_counter;
 
   long copy_pulse_counter = pulse_counter;

@@ -1,12 +1,12 @@
 ../Core/Src/sensors/../common/base_classes/Sensor.h:44:7:constexpr Sensor::Sensor()	1
-../Core/Src/sensors/Encoder.cpp:13:1:Encoder::Encoder(TimerPin*, float, int)	1
-../Core/Src/sensors/Encoder.cpp:46:6:void Encoder::handleA()	1
-../Core/Src/sensors/Encoder.cpp:69:6:void Encoder::handleB()	1
-../Core/Src/sensors/Encoder.cpp:93:6:void Encoder::handleIndex()	1
-../Core/Src/sensors/Encoder.cpp:113:6:virtual void Encoder::update()	1
-../Core/Src/sensors/Encoder.cpp:138:7:virtual float Encoder::getSensorAngle()	1
-../Core/Src/sensors/Encoder.cpp:148:7:virtual float Encoder::getVelocity()	6
-../Core/Src/sensors/Encoder.cpp:192:5:virtual int Encoder::needsSearch()	3
-../Core/Src/sensors/Encoder.cpp:197:5:int Encoder::hasIndex()	1
-../Core/Src/sensors/Encoder.cpp:204:6:virtual void Encoder::init()	2
-../Core/Src/sensors/Encoder.cpp:252:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	1
+../Core/Src/sensors/Encoder.cpp:13:1:Encoder::Encoder(TimerPin*, TIM_TypeDef*, float, int)	1
+../Core/Src/sensors/Encoder.cpp:47:6:void Encoder::handleA()	1
+../Core/Src/sensors/Encoder.cpp:70:6:void Encoder::handleB()	1
+../Core/Src/sensors/Encoder.cpp:94:6:void Encoder::handleIndex()	1
+../Core/Src/sensors/Encoder.cpp:114:6:virtual void Encoder::update()	1
+../Core/Src/sensors/Encoder.cpp:139:7:virtual float Encoder::getSensorAngle()	1
+../Core/Src/sensors/Encoder.cpp:149:7:virtual float Encoder::getVelocity()	6
+../Core/Src/sensors/Encoder.cpp:193:5:virtual int Encoder::needsSearch()	3
+../Core/Src/sensors/Encoder.cpp:198:5:int Encoder::hasIndex()	1
+../Core/Src/sensors/Encoder.cpp:205:6:virtual void Encoder::init()	2
+../Core/Src/sensors/Encoder.cpp:253:6:void Encoder::enableInterrupts(void (*)(), void (*)(), void (*)())	1
