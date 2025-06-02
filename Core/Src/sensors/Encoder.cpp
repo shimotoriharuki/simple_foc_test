@@ -10,12 +10,14 @@
 
 uint32_t mon_encoder_cnt;
 
-Encoder::Encoder(int _encA, int _encB , float _ppr, int _index){
+Encoder::Encoder(TimerPin *pin , float _ppr, int _index){
 
   // Encoder measurement structure init
   // hardware pins
-  pinA = _encA;
-  pinB = _encB;
+  //pinA = _encA;
+  //pinB = _encB;
+  pin_ = pin;
+
   // counter setup
   pulse_counter = 0;
   pulse_timestamp = 0;
@@ -200,7 +202,8 @@ int Encoder::hasIndex(){
 // encoder initialisation of the hardware pins
 // and calculation variables
 void Encoder::init(){
-	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
+	//HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
+	HAL_TIM_Encoder_Start(pin_->htim, pin_->channel);
 
 	pulse_counter = 0;
 	//pulse_timestamp = _micros();

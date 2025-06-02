@@ -24,7 +24,9 @@ TimerPin *p_phase_c= &phase_c;
 BLDCDriver3PWM driver(p_phase_a, p_phase_b, p_phase_c, p_enable_1); // mini v1.1
 
 // encoder instance
-Encoder encoder(2, 3, 75);
+TimerPin encoder_pin = {.htim = &htim2, .channel = TIM_CHANNEL_ALL};
+TimerPin *p_encoder_pin= &encoder_pin;
+Encoder encoder(p_encoder_pin, 75);
 static float target_angle;
 
 static bool motor_processing_flag = false;
