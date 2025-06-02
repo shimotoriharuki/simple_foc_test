@@ -8,54 +8,32 @@
 #include "SimpleFOC.h"
 
 // BLDC motor & driver instance
-//BLDCMotor motor(8, 6.9, 492);
 BLDCMotor motor(8);
-// BLDCDriver3PWM driver = BLDCDriver3PWM(11, 10, 9, 8); // mini v1.0
+
 GPIOPin enable_1 = {.port = GPIOA, .channel = GPIO_PIN_11};
 GPIOPin *p_enable_1 = &enable_1;
-
 TimerPin phase_a = {.htim = &htim1, .channel = TIM_CHANNEL_1};
 TimerPin *p_phase_a= &phase_a;
 TimerPin phase_b = {.htim = &htim1, .channel = TIM_CHANNEL_2};
 TimerPin *p_phase_b= &phase_b;
 TimerPin phase_c = {.htim = &htim1, .channel = TIM_CHANNEL_3};
 TimerPin *p_phase_c= &phase_c;
-
 BLDCDriver3PWM driver(p_phase_a, p_phase_b, p_phase_c, p_enable_1); // mini v1.1
 
 // encoder instance
 TimerPin encoder_pin = {.htim = &htim2, .channel = TIM_CHANNEL_ALL};
 TimerPin *p_encoder_pin= &encoder_pin;
 Encoder encoder(p_encoder_pin, TIM2, 75);
-static float target_angle;
 
+static float target_angle;
 static bool motor_processing_flag = false;
 float mon_angle = 0;
 
-// Interrupt routine intialisation
-// channel A and B callbacks
-/*
- void doA(){
- encoder.handleA();
- }
- void doB(){
- encoder.handleB();
- }
- */
-void doMotor(char *cmd) {
-	//command.motor(&motor, cmd);
-}
 
 void cppInit() {
 	HAL_TIM_Base_Start_IT(&htim6);
-	// if SimpleFOCMini is stacked in arduino headers
-	// on pins 12,11,10,9,8
-	// pin 12 is used as ground
-	//pinMode(12,OUTPUT);
-	//pinMode(12,LOW);
 
 	encoder.init();
-	//encoder.enableInterrupts(doA, doB);
 
 	// link the motor to the sensor
 	motor.linkSensor(&encoder);
@@ -113,6 +91,7 @@ void cppLoop() {
 	//motor.loopFOC();
 
 	motor_processing_flag = true;
+	motor.startMotorControl();
 
 	for(uint8_t i = 0; i < 10; i++){
 		target_angle = 6.28;
@@ -144,6 +123,9 @@ void cppTimerInterrupt1ms() {
 
 	//motor.absoluteZeroSearchInterruptHandler();
 
+	motor.setTarget(target_angle);
+	motor.timerInterruptHandler();
+	/*
 	if(motor_processing_flag == true){
 		motor.loopFOC();
 		motor.move(target_angle);
@@ -151,5 +133,6 @@ void cppTimerInterrupt1ms() {
 		mon_angle = target_angle;
 
 	}
+	*/
 
 }

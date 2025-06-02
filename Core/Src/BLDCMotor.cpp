@@ -39,7 +39,7 @@ int trap_150_map[12][3] = {
 // - KV            - motor kv rating (rmp/v)
 // - L             - motor phase inductance
 BLDCMotor::BLDCMotor(int pp, float _R, float _KV, float _inductance)
-: FOCMotor(), absolute_zero_search_flag(false)
+: FOCMotor(), absolute_zero_search_flag_(false), motor_control_flag_(false), target_(0)
 {
   // save pole pairs number
   pole_pairs = pp;
@@ -139,6 +139,7 @@ void BLDCMotor::enable()
   PID_current_q.reset();
   PID_current_d.reset();
   // motor status update
+  target_ = 0;
   enabled = 1;
 }
 
@@ -324,9 +325,9 @@ int BLDCMotor::absoluteZeroSearch() {
   voltage_limit = voltage_sensor_align;
   shaft_angle = 0;
   while(sensor->needsSearch() && shaft_angle < _2PI){
-	  absolute_zero_search_flag = true;
+	  absolute_zero_search_flag_ = true;
   }
-  absolute_zero_search_flag = false;
+  absolute_zero_search_flag_ = false;
   // disable motor
   setPhaseVoltage(0, 0, 0);
   // reinit the limits
@@ -340,13 +341,37 @@ int BLDCMotor::absoluteZeroSearch() {
   return !sensor->needsSearch();
 }
 
-void BLDCMotor::absoluteZeroSearchInterruptHandler() {
-	if(absolute_zero_search_flag == true){
+void BLDCMotor::absoluteZeroSearchInterruptHandler()
+{
+	if(absolute_zero_search_flag_ == true){
 		angleOpenloop(1.5f*_2PI);
 		sensor->update();
 	}
 }
 
+void BLDCMotor::timerInterruptHandler()
+{
+	if(motor_control_flag_ == true){
+		loopFOC();
+		move(target_);
+	}
+
+}
+
+void BLDCMotor::startMotorControl()
+{
+	motor_control_flag_ = true;
+}
+
+void BLDCMotor::stopMotorControl()
+{
+	motor_control_flag_ = false;
+}
+
+void BLDCMotor::setTarget(float target)
+{
+	target_ = target;
+}
 // Iterative function looping FOC algorithm, setting Uq on the Motor
 // The faster it can be run the better
 void BLDCMotor::loopFOC() {

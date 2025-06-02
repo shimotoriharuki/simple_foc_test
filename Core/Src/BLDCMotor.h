@@ -82,6 +82,10 @@ class BLDCMotor
     */
     void setPhaseVoltage(float Uq, float Ud, float angle_el) override;
     void absoluteZeroSearchInterruptHandler();
+    void timerInterruptHandler();
+    void setTarget(float);
+    void startMotorControl();
+    void stopMotorControl();
 
   private:
     // FOC methods 
@@ -110,8 +114,10 @@ class BLDCMotor
      */
     float angleOpenloop(float target_angle);
     // open loop variables
-    long open_loop_timestamp;
-    bool absolute_zero_search_flag;
+    //long open_loop_timestamp_;
+    bool absolute_zero_search_flag_;
+    bool motor_control_flag_;
+    float target_;
 };
 
 
