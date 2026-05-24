@@ -91,8 +91,8 @@ all: main-build
 main-build: simple_foc_test.elf secondary-outputs
 
 # Tool invocations
-simple_foc_test.elf simple_foc_test.map: $(OBJS) $(USER_OBJS) /home/haruki/STM32CubeIDE/workspace_1.18.1/simple_foc_test/STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "simple_foc_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/haruki/STM32CubeIDE/workspace_1.18.1/simple_foc_test/STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="simple_foc_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+simple_foc_test.elf simple_foc_test.map: $(OBJS) $(USER_OBJS) C:\Users\under\Documents\simple_foc_test\STM32F303K8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "simple_foc_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\under\Documents\simple_foc_test\STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="simple_foc_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
